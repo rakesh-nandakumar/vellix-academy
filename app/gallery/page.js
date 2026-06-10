@@ -1,8 +1,6 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import PageBanner from "@/components/PageBanner";
-import ScrollTopBtn from "@/components/ScrollTopBtn";
-import Image from "next/image";
+import SectionHeading from "@/components/SectionHeading";
+import GalleryGrid from "@/components/GalleryGrid";
 import { galleryImages } from "@/lib/data";
 
 export const metadata = {
@@ -14,43 +12,18 @@ export const metadata = {
 export default function GalleryPage() {
   return (
     <>
-      <Header />
       <PageBanner title="Gallery" breadcrumbs={[{ label: "Gallery" }]} />
 
-      <section style={{ padding: "80px 0" }}>
-        <div className="section-container">
-          <div className="section-head">
-            <span className="section-label">Campus Life</span>
-            <h2 className="section-title">Life at Vellix Academy</h2>
-            <p className="section-subtitle">
-              From graduation ceremonies to intensive hackathons — here's a glimpse into what
-              life looks like at Vellix Academy.
-            </p>
-          </div>
-          <div className="gallery-archive-grid">
-            {galleryImages.map((img, i) => (
-              <div key={i} className="gallery-item">
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  fill
-                  sizes="(max-width: 768px) 50vw, 33vw"
-                  style={{ objectFit: "cover" }}
-                />
-                <div className="gallery-overlay">
-                  <i className="fas fa-expand-alt"></i>
-                </div>
-              </div>
-            ))}
-          </div>
+      <section className="py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Campus Life"
+            title="Life at Vellix Academy"
+            subtitle="From graduation ceremonies to intensive hackathons — here's a glimpse into what life looks like at Vellix Academy."
+          />
+          <GalleryGrid images={galleryImages} />
         </div>
       </section>
-
-      <Footer />
-      <a href="https://wa.me/94771234567" className="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-        <i className="fab fa-whatsapp"></i>
-      </a>
-      <ScrollTopBtn />
     </>
   );
 }

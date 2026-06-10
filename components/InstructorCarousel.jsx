@@ -1,53 +1,39 @@
 "use client";
+import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/navigation";
-import Image from "next/image";
+import InstructorCard from "@/components/InstructorCard";
+import CarouselArrows from "@/components/CarouselArrows";
 import { instructors } from "@/lib/data";
 
 export default function InstructorCarousel() {
+  const [swiper, setSwiper] = useState(null);
+
   return (
-    <Swiper
-      modules={[Autoplay, Navigation]}
-      autoplay={{ delay: 3500, disableOnInteraction: false }}
-      navigation
-      loop
-      slidesPerView={1}
-      spaceBetween={24}
-      breakpoints={{
-        480: { slidesPerView: 2 },
-        768: { slidesPerView: 3 },
-        1200: { slidesPerView: 4 },
-      }}
-      className="instructor-swiper"
-    >
-      {instructors.map((ins) => (
-        <SwiperSlide key={ins.slug}>
-          <div className="instructor-card">
-            <div className="instructor-img-wrap">
-              <Image
-                src={ins.img}
-                alt={ins.name}
-                fill
-                sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 25vw"
-                style={{ objectFit: "cover" }}
-              />
-              <div className="instructor-overlay">
-                <div className="instructor-socials">
-                  <a href="#" aria-label="LinkedIn"><i className="fab fa-linkedin-in"></i></a>
-                  <a href="#" aria-label="Email"><i className="fas fa-envelope"></i></a>
-                </div>
-              </div>
-            </div>
-            <div className="instructor-info">
-              <h3>{ins.name}</h3>
-              <p>{ins.subject}</p>
-              <span className="instructor-role">{ins.role}</span>
-            </div>
-          </div>
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <div>
+      <div className="mb-8 flex justify-end">
+        <CarouselArrows swiper={swiper} />
+      </div>
+      <Swiper
+        modules={[Autoplay]}
+        autoplay={{ delay: 3500, disableOnInteraction: false }}
+        loop
+        onSwiper={setSwiper}
+        slidesPerView={1}
+        spaceBetween={28}
+        breakpoints={{
+          480: { slidesPerView: 2 },
+          768: { slidesPerView: 3 },
+          1200: { slidesPerView: 4 },
+        }}
+      >
+        {instructors.map((ins) => (
+          <SwiperSlide key={ins.slug} className="!h-auto">
+            <InstructorCard instructor={ins} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   );
 }

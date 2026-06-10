@@ -1,67 +1,26 @@
-"use client";
-import { useState } from "react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import ScrollTopBtn from "@/components/ScrollTopBtn";
-import Link from "next/link";
+import LoginForm from "@/components/LoginForm";
+
+export const metadata = {
+  title: "Login – Vellix Academy",
+  description: "Sign in to access your Vellix Academy student portal.",
+};
 
 export default function LoginPage() {
-  const [form, setForm] = useState({ email: "", password: "" });
-  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
-  const handleSubmit = (e) => e.preventDefault();
-
   return (
-    <>
-      <Header />
-
-      <section className="auth-section">
-        <div className="auth-card">
-          <div className="auth-card-header">
-            <h2>Student Login</h2>
-            <p>Sign in to access your Vellix Academy student portal.</p>
-          </div>
-          <form className="contact-form" onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label>Email Address *</label>
-              <input
-                type="email"
-                name="email"
-                value={form.email}
-                onChange={handleChange}
-                placeholder="your@email.com"
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label>Password *</label>
-              <input
-                type="password"
-                name="password"
-                value={form.password}
-                onChange={handleChange}
-                placeholder="Enter your password"
-                required
-              />
-            </div>
-            <div className="form-meta">
-              <label className="checkbox-label">
-                <input type="checkbox" /> Remember me
-              </label>
-              <a href="#" className="forgot-link">Forgot password?</a>
-            </div>
-            <button type="submit" className="btn-primary btn-full">
-              Login <i className="fas fa-sign-in-alt"></i>
-            </button>
-            <p className="auth-footer-text">
-              Don't have an account?{" "}
-              <Link href="/register">Apply Now</Link>
+    <section className="flex min-h-[80vh] items-center bg-gradient-to-b from-sky-50/70 to-white py-16 sm:py-20">
+      <div className="mx-auto w-full max-w-md px-4 sm:px-6">
+        <div className="rounded-3xl border border-slate-200 bg-white p-7 shadow-xl shadow-navy-950/5 sm:p-10">
+          <div className="mb-8 text-center">
+            <h1 className="font-display text-3xl font-extrabold tracking-tight text-navy-950">
+              Student Login
+            </h1>
+            <p className="mt-3 text-sm text-slate-500">
+              Sign in to access your Vellix Academy student portal.
             </p>
-          </form>
+          </div>
+          <LoginForm />
         </div>
-      </section>
-
-      <Footer />
-      <ScrollTopBtn />
-    </>
+      </div>
+    </section>
   );
 }

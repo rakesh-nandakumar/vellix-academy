@@ -1,60 +1,39 @@
-"use client";
-import { useState } from "react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import PageBanner from "@/components/PageBanner";
-import ScrollTopBtn from "@/components/ScrollTopBtn";
-import Link from "next/link";
-import { faqs } from "@/lib/data";
+import SectionHeading from "@/components/SectionHeading";
+import FaqAccordion from "@/components/FaqAccordion";
+import Button from "@/components/Button";
+
+export const metadata = {
+  title: "FAQ – Vellix Academy",
+  description:
+    "Frequently asked questions about Vellix Academy programmes, admissions, fees, class sizes and career placement support.",
+};
 
 export default function FAQPage() {
-  const [openIndex, setOpenIndex] = useState(null);
-
   return (
     <>
-      <Header />
-      <PageBanner title="Frequently Asked Questions" breadcrumbs={[{ label: "FAQ" }]} />
+      <PageBanner
+        title="Frequently Asked Questions"
+        breadcrumbs={[{ label: "FAQ" }]}
+      />
 
-      <section style={{ padding: "80px 0" }}>
-        <div className="section-container">
-          <div className="section-head">
-            <span className="section-label">Got Questions?</span>
-            <h2 className="section-title">Frequently Asked Questions</h2>
-            <p className="section-subtitle">
-              Everything you need to know about enrolling at Vellix Academy.
+      <section className="py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Got Questions?"
+            title="Frequently Asked Questions"
+            subtitle="Everything you need to know about enrolling at Vellix Academy."
+          />
+          <FaqAccordion />
+
+          <div className="mt-14 text-center">
+            <p className="mb-5 text-slate-500">
+              Still have questions? We&apos;re happy to help.
             </p>
-          </div>
-          <div className="faq-accordion" style={{ maxWidth: "860px", margin: "0 auto" }}>
-            {faqs.map((item, i) => (
-              <div
-                key={i}
-                className={`faq-item${openIndex === i ? " open" : ""}`}
-                onClick={() => setOpenIndex(openIndex === i ? null : i)}
-              >
-                <div className="faq-question">
-                  <span>{item.q}</span>
-                  <i className={`fas fa-chevron-${openIndex === i ? "up" : "down"}`}></i>
-                </div>
-                <div className="faq-answer">
-                  <p>{item.a}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="section-cta" style={{ marginTop: "48px" }}>
-            <p style={{ marginBottom: "16px", color: "#555" }}>
-              Still have questions? We're happy to help.
-            </p>
-            <Link href="/contact" className="btn-primary">Contact Us</Link>
+            <Button href="/contact">Contact Us</Button>
           </div>
         </div>
       </section>
-
-      <Footer />
-      <a href="https://wa.me/94771234567" className="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-        <i className="fab fa-whatsapp"></i>
-      </a>
-      <ScrollTopBtn />
     </>
   );
 }

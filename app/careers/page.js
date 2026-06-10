@@ -1,8 +1,7 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import PageBanner from "@/components/PageBanner";
-import ScrollTopBtn from "@/components/ScrollTopBtn";
-import Link from "next/link";
+import SectionHeading from "@/components/SectionHeading";
+import Button from "@/components/Button";
+import Icon from "@/components/Icon";
 import { careers } from "@/lib/data";
 
 export const metadata = {
@@ -14,52 +13,64 @@ export const metadata = {
 export default function CareersPage() {
   return (
     <>
-      <Header />
       <PageBanner title="Careers" breadcrumbs={[{ label: "Careers" }]} />
 
-      <section style={{ padding: "80px 0" }}>
-        <div className="section-container">
-          <div className="section-head">
-            <span className="section-label">Join Our Team</span>
-            <h2 className="section-title">Open Positions at Vellix Academy</h2>
-            <p className="section-subtitle">
-              We're looking for passionate people who care about education, technology and making
-              an impact. Browse our open roles below.
-            </p>
-          </div>
-          <div className="careers-list">
+      <section className="py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Join Our Team"
+            title="Open Positions at Vellix Academy"
+            subtitle="We're looking for passionate people who care about education, technology and making an impact. Browse our open roles below."
+          />
+
+          <div className="mx-auto max-w-4xl space-y-5">
             {careers.map((job) => (
-              <div key={job.id} className="career-item">
-                <div className="career-info">
-                  <h3>{job.title}</h3>
-                  <p>{job.description}</p>
-                  <div className="career-meta">
-                    <span className="career-badge career-type">{job.type}</span>
-                    <span className="career-badge career-location">
-                      <i className="fas fa-map-marker-alt"></i> {job.location}
+              <article
+                key={job.id}
+                className="flex flex-col gap-6 rounded-2xl border border-slate-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-transparent hover:shadow-xl hover:shadow-navy-950/10 sm:flex-row sm:items-center sm:p-7"
+              >
+                <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-sky-50 text-sky-600 ring-1 ring-sky-100">
+                  <Icon name="briefcase" className="h-6 w-6" />
+                </span>
+
+                <div className="flex-1">
+                  <h3 className="font-display text-lg font-bold text-navy-950">
+                    {job.title}
+                  </h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-slate-500">
+                    {job.description}
+                  </p>
+                  <div className="mt-3 flex flex-wrap gap-2.5">
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-600 ring-1 ring-sky-100">
+                      <Icon name="clock" className="h-3 w-3" />
+                      {job.type}
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600">
+                      <Icon name="map-pin" className="h-3 w-3" />
+                      {job.location}
                     </span>
                   </div>
                 </div>
-                <div className="career-action">
-                  <Link href="/contact" className="btn-primary">Apply Now</Link>
+
+                <div className="shrink-0">
+                  <Button href="/contact" size="sm">
+                    Apply Now
+                  </Button>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
-          <div className="section-cta" style={{ marginTop: "48px" }}>
-            <p style={{ marginBottom: "16px", color: "#555" }}>
-              Don't see a role that fits? Send us your CV anyway.
+
+          <div className="mt-14 text-center">
+            <p className="mb-5 text-slate-500">
+              Don&apos;t see a role that fits? Send us your CV anyway.
             </p>
-            <Link href="/contact" className="btn-outline">Get In Touch</Link>
+            <Button href="/contact" variant="outline">
+              Get In Touch
+            </Button>
           </div>
         </div>
       </section>
-
-      <Footer />
-      <a href="https://wa.me/94771234567" className="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-        <i className="fab fa-whatsapp"></i>
-      </a>
-      <ScrollTopBtn />
     </>
   );
 }

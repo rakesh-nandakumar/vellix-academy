@@ -1,144 +1,92 @@
-"use client";
-import { useState } from "react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import PageBanner from "@/components/PageBanner";
-import ScrollTopBtn from "@/components/ScrollTopBtn";
+import ContactForm from "@/components/ContactForm";
+import Icon from "@/components/Icon";
+
+export const metadata = {
+  title: "Contact Us – Vellix Academy",
+  description:
+    "Get in touch with Vellix Academy. Ask about programmes, fees and admissions — we'll respond within 24 hours.",
+};
+
+const contactDetails = [
+  {
+    icon: "map-pin",
+    title: "Visit Us",
+    content: "123 Bauddhaloka Mawatha, Kohuwala, Colombo 06",
+  },
+  {
+    icon: "phone",
+    title: "Call Us",
+    content: "+94 112 123 456",
+    href: "tel:+94112123456",
+  },
+  {
+    icon: "smartphone",
+    title: "Mobile / WhatsApp",
+    content: "+94 77 123 4567",
+    href: "tel:+94771234567",
+  },
+  {
+    icon: "mail",
+    title: "Email Us",
+    content: "info@vellixacademy.lk",
+    href: "mailto:info@vellixacademy.lk",
+  },
+  {
+    icon: "clock",
+    title: "Opening Hours",
+    content: "Mon – Sat: 8:00 AM – 7:00 PM",
+  },
+];
 
 export default function ContactPage() {
-  const [sent, setSent] = useState(false);
-  const [form, setForm] = useState({ name: "", email: "", phone: "", subject: "", message: "" });
-
-  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSent(true);
-  };
-
   return (
     <>
-      <Header />
       <PageBanner title="Contact Us" breadcrumbs={[{ label: "Contact" }]} />
 
-      <section style={{ padding: "80px 0" }}>
-        <div className="section-container">
-          <div className="contact-grid">
-            {/* Contact Info */}
-            <div className="contact-info-col">
-              <span className="section-label">Get In Touch</span>
-              <h2 className="section-title">Contact Vellix Academy</h2>
-              <p style={{ marginBottom: "32px", color: "#555" }}>
-                Have a question about our programmes, fees or admissions? Fill in the form and
-                we'll get back to you within 24 hours.
-              </p>
-              <ul className="footer-contact-list">
-                <li>
-                  <i className="fas fa-map-marker-alt"></i>
-                  <span>123 Bauddhaloka Mawatha, Kohuwala, Colombo 06</span>
-                </li>
-                <li>
-                  <i className="fas fa-phone-alt"></i>
-                  <a href="tel:+94112123456">+94 112 123 456</a>
-                </li>
-                <li>
-                  <i className="fas fa-mobile-alt"></i>
-                  <a href="tel:+94771234567">+94 77 123 4567</a>
-                </li>
-                <li>
-                  <i className="fas fa-envelope"></i>
-                  <a href="mailto:info@vellixacademy.lk">info@vellixacademy.lk</a>
-                </li>
-                <li>
-                  <i className="fas fa-clock"></i>
-                  <span>Mon – Sat: 8:00 AM – 7:00 PM</span>
-                </li>
-              </ul>
-            </div>
+      <section className="py-20 sm:py-24">
+        <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[1fr_1.4fr] lg:gap-16 lg:px-8">
+          {/* Info column */}
+          <div>
+            <span className="mb-4 inline-block rounded-full bg-sky-50 px-3.5 py-1 text-xs font-semibold uppercase tracking-widest text-sky-600 ring-1 ring-sky-200">
+              Get In Touch
+            </span>
+            <h2 className="font-display text-3xl font-extrabold tracking-tight text-navy-950 sm:text-4xl">
+              Contact Vellix Academy
+            </h2>
+            <p className="mt-4 leading-relaxed text-slate-500">
+              Have a question about our programmes, fees or admissions? Fill in
+              the form and we&apos;ll get back to you within 24 hours.
+            </p>
 
-            {/* Contact Form */}
-            <div className="contact-form-col">
-              {sent ? (
-                <div className="form-success">
-                  <i className="fas fa-check-circle"></i>
-                  <h3>Message Sent!</h3>
-                  <p>Thank you for reaching out. We'll get back to you within 24 hours.</p>
-                </div>
-              ) : (
-                <form className="contact-form" onSubmit={handleSubmit}>
-                  <div className="form-row">
-                    <div className="form-group">
-                      <label>Full Name *</label>
-                      <input
-                        type="text"
-                        name="name"
-                        value={form.name}
-                        onChange={handleChange}
-                        placeholder="Your full name"
-                        required
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label>Email Address *</label>
-                      <input
-                        type="email"
-                        name="email"
-                        value={form.email}
-                        onChange={handleChange}
-                        placeholder="your@email.com"
-                        required
-                      />
-                    </div>
+            <ul className="mt-9 space-y-6">
+              {contactDetails.map((item) => (
+                <li key={item.title} className="flex gap-4">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-sky-50 text-sky-600 ring-1 ring-sky-100">
+                    <Icon name={item.icon} className="h-5 w-5" />
+                  </span>
+                  <div>
+                    <p className="text-sm font-bold text-navy-950">{item.title}</p>
+                    {item.href ? (
+                      <a
+                        href={item.href}
+                        className="text-sm text-slate-500 transition hover:text-sky-600"
+                      >
+                        {item.content}
+                      </a>
+                    ) : (
+                      <p className="text-sm text-slate-500">{item.content}</p>
+                    )}
                   </div>
-                  <div className="form-row">
-                    <div className="form-group">
-                      <label>Phone Number</label>
-                      <input
-                        type="tel"
-                        name="phone"
-                        value={form.phone}
-                        onChange={handleChange}
-                        placeholder="+94 XX XXX XXXX"
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label>Subject *</label>
-                      <input
-                        type="text"
-                        name="subject"
-                        value={form.subject}
-                        onChange={handleChange}
-                        placeholder="Programme enquiry, general question..."
-                        required
-                      />
-                    </div>
-                  </div>
-                  <div className="form-group">
-                    <label>Message *</label>
-                    <textarea
-                      name="message"
-                      value={form.message}
-                      onChange={handleChange}
-                      rows={6}
-                      placeholder="How can we help you?"
-                      required
-                    />
-                  </div>
-                  <button type="submit" className="btn-primary btn-full">
-                    Send Message <i className="fas fa-paper-plane"></i>
-                  </button>
-                </form>
-              )}
-            </div>
+                </li>
+              ))}
+            </ul>
           </div>
+
+          {/* Form column */}
+          <ContactForm />
         </div>
       </section>
-
-      <Footer />
-      <a href="https://wa.me/94771234567" className="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-        <i className="fab fa-whatsapp"></i>
-      </a>
-      <ScrollTopBtn />
     </>
   );
 }

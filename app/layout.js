@@ -1,10 +1,19 @@
-import { Roboto } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import FloatingButtons from "@/components/FloatingButtons";
 
-const roboto = Roboto({
-  weight: ["400", "500", "700"],
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-roboto",
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-jakarta",
+  display: "swap",
 });
 
 export const metadata = {
@@ -13,25 +22,19 @@ export const metadata = {
     "Vellix Academy is Sri Lanka's premier enterprise IT education provider. Master software development, data science, cloud computing, and more with industry experts.",
   keywords:
     "IT courses Sri Lanka, software development, data science, cloud computing, full stack web development, enterprise programming",
+  icons: {
+    icon: "/images/logos/favicon.png",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={roboto.variable}>
-      <head>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="icon"
-          href="/images/logos/favicon.jpg"
-          type="image/jpeg"
-        />
-      </head>
-      <body style={{ fontFamily: "var(--font-roboto), Roboto, sans-serif" }}>
-        {children}
+    <html lang="en" className={`${inter.variable} ${jakarta.variable}`}>
+      <body className="bg-white font-sans text-slate-600 antialiased">
+        <Header />
+        <main>{children}</main>
+        <Footer />
+        <FloatingButtons />
       </body>
     </html>
   );

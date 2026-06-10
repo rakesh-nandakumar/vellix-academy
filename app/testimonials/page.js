@@ -1,7 +1,6 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import PageBanner from "@/components/PageBanner";
-import ScrollTopBtn from "@/components/ScrollTopBtn";
+import SectionHeading from "@/components/SectionHeading";
+import TestimonialCard from "@/components/TestimonialCard";
 import { testimonials } from "@/lib/data";
 
 export const metadata = {
@@ -13,45 +12,25 @@ export const metadata = {
 export default function TestimonialsPage() {
   return (
     <>
-      <Header />
-      <PageBanner title="Student Testimonials" breadcrumbs={[{ label: "Testimonials" }]} />
+      <PageBanner
+        title="Student Testimonials"
+        breadcrumbs={[{ label: "Testimonials" }]}
+      />
 
-      <section style={{ padding: "80px 0" }}>
-        <div className="section-container">
-          <div className="section-head">
-            <span className="section-label">Success Stories</span>
-            <h2 className="section-title">What Our Graduates Say</h2>
-            <p className="section-subtitle">
-              Real feedback from students who built their IT careers at Vellix Academy.
-            </p>
-          </div>
-          <div className="testimonials-archive-grid">
+      <section className="py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Success Stories"
+            title="What Our Graduates Say"
+            subtitle="Real feedback from students who built their IT careers at Vellix Academy."
+          />
+          <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
             {testimonials.map((t, i) => (
-              <div key={i} className="testimonial-card">
-                <div className="testimonial-stars">
-                  {[...Array(5)].map((_, j) => (
-                    <i key={j} className="fas fa-star"></i>
-                  ))}
-                </div>
-                <p className="testimonial-text">"{t.text}"</p>
-                <div className="testimonial-author">
-                  <div className="testimonial-avatar">{t.name.charAt(0)}</div>
-                  <div>
-                    <strong>{t.name}</strong>
-                    <span>{t.role}</span>
-                  </div>
-                </div>
-              </div>
+              <TestimonialCard key={i} testimonial={t} />
             ))}
           </div>
         </div>
       </section>
-
-      <Footer />
-      <a href="https://wa.me/94771234567" className="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-        <i className="fab fa-whatsapp"></i>
-      </a>
-      <ScrollTopBtn />
     </>
   );
 }

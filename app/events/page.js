@@ -1,8 +1,7 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import PageBanner from "@/components/PageBanner";
-import ScrollTopBtn from "@/components/ScrollTopBtn";
-import Link from "next/link";
+import SectionHeading from "@/components/SectionHeading";
+import Button from "@/components/Button";
+import Icon from "@/components/Icon";
 import { events } from "@/lib/data";
 
 export const metadata = {
@@ -14,49 +13,60 @@ export const metadata = {
 export default function EventsPage() {
   return (
     <>
-      <Header />
       <PageBanner title="Events" breadcrumbs={[{ label: "Events" }]} />
 
-      <section style={{ padding: "80px 0" }}>
-        <div className="section-container">
-          <div className="section-head">
-            <span className="section-label">What's On</span>
-            <h2 className="section-title">Upcoming Events</h2>
-            <p className="section-subtitle">
-              From hackathons and tech talks to programme launch days and open campus events —
-              there's always something happening at Vellix Academy.
-            </p>
-          </div>
-          <div className="events-list">
+      <section className="py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="What's On"
+            title="Upcoming Events"
+            subtitle="From hackathons and tech talks to programme launch days and open campus events — there's always something happening at Vellix Academy."
+          />
+
+          <div className="mx-auto max-w-4xl space-y-5">
             {events.map((event) => (
-              <div key={event.id} className="event-item">
-                <div className="event-date-box">
-                  <span className="event-month">{event.month}</span>
-                  <span className="event-day">{event.day}</span>
-                  <span className="event-year">{event.year}</span>
+              <article
+                key={event.id}
+                className="flex flex-col gap-6 rounded-2xl border border-slate-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-transparent hover:shadow-xl hover:shadow-navy-950/10 sm:flex-row sm:items-center sm:p-7"
+              >
+                {/* Date block */}
+                <div className="flex h-24 w-24 shrink-0 flex-col items-center justify-center rounded-2xl bg-gradient-to-br from-sky-400 to-sky-600 text-white shadow-lg shadow-sky-500/30">
+                  <span className="text-[11px] font-bold uppercase tracking-widest opacity-90">
+                    {event.month}
+                  </span>
+                  <span className="font-display text-3xl font-extrabold leading-none">
+                    {event.day}
+                  </span>
+                  <span className="text-[11px] opacity-80">{event.year}</span>
                 </div>
-                <div className="event-details">
-                  <span className="event-category">{event.category}</span>
-                  <h3>{event.title}</h3>
-                  <p>{event.description}</p>
-                  <div className="event-meta">
-                    <span><i className="fas fa-map-marker-alt"></i> {event.location}</span>
-                  </div>
+
+                {/* Details */}
+                <div className="flex-1">
+                  <span className="inline-block rounded-full bg-sky-50 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-sky-600 ring-1 ring-sky-100">
+                    {event.category}
+                  </span>
+                  <h3 className="mt-2.5 font-display text-lg font-bold text-navy-950">
+                    {event.title}
+                  </h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-slate-500">
+                    {event.description}
+                  </p>
+                  <p className="mt-3 flex items-center gap-1.5 text-xs font-medium text-slate-500">
+                    <Icon name="map-pin" className="h-3.5 w-3.5 text-sky-500" />
+                    {event.location}
+                  </p>
                 </div>
-                <div className="event-action">
-                  <Link href="/contact" className="btn-primary">Register</Link>
+
+                <div className="shrink-0">
+                  <Button href="/contact" size="sm">
+                    Register
+                  </Button>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
       </section>
-
-      <Footer />
-      <a href="https://wa.me/94771234567" className="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-        <i className="fab fa-whatsapp"></i>
-      </a>
-      <ScrollTopBtn />
     </>
   );
 }

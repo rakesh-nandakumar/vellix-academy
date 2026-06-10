@@ -1,13 +1,16 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import Image from "next/image";
 import HeroSlider from "@/components/HeroSlider";
 import CourseCarousel from "@/components/CourseCarousel";
 import InstructorCarousel from "@/components/InstructorCarousel";
 import TestimonialSlider from "@/components/TestimonialSlider";
 import StatsCounter from "@/components/StatsCounter";
-import ScrollTopBtn from "@/components/ScrollTopBtn";
-import Image from "next/image";
-import Link from "next/link";
+import SectionHeading from "@/components/SectionHeading";
+import ProgrammeCard from "@/components/ProgrammeCard";
+import NewsCard from "@/components/NewsCard";
+import GalleryGrid from "@/components/GalleryGrid";
+import CtaBanner from "@/components/CtaBanner";
+import Button from "@/components/Button";
+import Icon from "@/components/Icon";
 import { newsArticles, programmes, galleryImages } from "@/lib/data";
 
 export const metadata = {
@@ -16,108 +19,123 @@ export const metadata = {
     "Sri Lanka's premier enterprise IT education provider. Master full-stack development, data science, cloud computing and cybersecurity with industry experts.",
 };
 
+const aboutPoints = [
+  "37+ industry-expert instructors",
+  "Real enterprise project deliverables",
+  "Career placement for top performers",
+  "Campus & online flexible options",
+];
+
 export default function HomePage() {
   return (
     <>
-      <Header />
-
-      {/* Hero */}
       <HeroSlider />
 
-      {/* About Section */}
-      <section className="about-section">
-        <div className="about-grid">
-          <div className="about-image-col">
-            <div className="about-img-main">
+      {/* About */}
+      <section className="py-20 sm:py-28">
+        <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-20 lg:px-8">
+          <div className="relative">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-2xl shadow-navy-950/15 max-lg:aspect-[16/11]">
               <Image
                 src="/images/cta-image.jpg"
                 alt="Vellix Academy students"
                 fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                style={{ objectFit: "cover", borderRadius: "8px" }}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
               />
             </div>
+            <div className="absolute -bottom-6 -right-4 hidden items-center gap-4 rounded-2xl border border-slate-100 bg-white p-5 shadow-xl shadow-navy-950/10 sm:flex lg:-right-8">
+              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-sky-400 to-sky-600 text-white">
+                <Icon name="award" className="h-6 w-6" />
+              </span>
+              <div>
+                <p className="font-display text-2xl font-extrabold text-navy-950">500+</p>
+                <p className="text-xs font-medium text-slate-500">Graduates Employed</p>
+              </div>
+            </div>
           </div>
-          <div className="about-content-col">
-            <span className="section-label">About Vellix Academy</span>
-            <h2 className="section-title">
-              We Teach Enterprise-Grade IT
-              <span className="highlight"> The Right Way</span>
-            </h2>
-            <p>
-              Vellix Academy is Sri Lanka's premier enterprise IT education provider. Unlike
-              traditional training centres, we teach software development, data science, cloud
-              computing and cybersecurity the way it's actually practised at Fortune 500 companies —
+
+          <div>
+            <SectionHeading
+              align="left"
+              eyebrow="About Vellix Academy"
+              title={
+                <>
+                  We Teach Enterprise-Grade IT{" "}
+                  <span className="text-sky-500">The Right Way</span>
+                </>
+              }
+            />
+            <p className="-mt-6 leading-relaxed text-slate-500">
+              Vellix Academy is Sri Lanka&apos;s premier enterprise IT education
+              provider. Unlike traditional training centres, we teach software
+              development, data science, cloud computing and cybersecurity the
+              way it&apos;s actually practised at Fortune 500 companies —
               production-ready, end-to-end, and project-driven.
             </p>
-            <p>
-              Our programmes are designed with the industry, for the industry. Every module maps
-              to a real-world skill employers hire for. Outstanding graduates receive direct
-              introductions to our partner companies and startups.
+            <p className="mt-4 leading-relaxed text-slate-500">
+              Our programmes are designed with the industry, for the industry.
+              Every module maps to a real-world skill employers hire for.
+              Outstanding graduates receive direct introductions to our partner
+              companies and startups.
             </p>
-            <ul className="about-points">
-              <li><i className="fas fa-check-circle"></i> 37+ industry-expert instructors</li>
-              <li><i className="fas fa-check-circle"></i> Real enterprise project deliverables</li>
-              <li><i className="fas fa-check-circle"></i> Career placement for top performers</li>
-              <li><i className="fas fa-check-circle"></i> Campus &amp; online flexible options</li>
+            <ul className="mt-7 grid gap-3.5 sm:grid-cols-2">
+              {aboutPoints.map((point) => (
+                <li key={point} className="flex items-center gap-2.5 text-sm font-medium text-navy-950">
+                  <Icon name="check-circle" className="h-5 w-5 shrink-0 text-sky-500" />
+                  {point}
+                </li>
+              ))}
             </ul>
-            <div className="about-btns">
-              <Link href="/about" className="btn-primary">Discover More</Link>
-              <Link href="/contact" className="btn-outline">Get In Touch</Link>
+            <div className="mt-9 flex flex-wrap gap-4">
+              <Button href="/about">
+                Discover More
+                <Icon name="arrow-right" className="h-4 w-4" />
+              </Button>
+              <Button href="/contact" variant="outline">
+                Get In Touch
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Programmes Section */}
-      <section className="programmes-section bg-light">
-        <div className="section-container">
-          <div className="section-head">
-            <span className="section-label">What We Offer</span>
-            <h2 className="section-title">Our Enterprise IT Programmes</h2>
-            <p className="section-subtitle">
-              Choose from intensive full-time bootcamps or flexible part-time tracks — all built
-              around real enterprise skills.
-            </p>
-          </div>
-          <div className="programmes-grid">
+      {/* Programmes */}
+      <section className="bg-slate-50 py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="What We Offer"
+            title="Our Enterprise IT Programmes"
+            subtitle="Choose from intensive full-time bootcamps or flexible part-time tracks — all built around real enterprise skills."
+          />
+          <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
             {programmes.slice(0, 6).map((prog) => (
-              <div key={prog.id} className="programme-card">
-                <div className="programme-icon">
-                  <i className={`fas ${prog.icon}`}></i>
-                </div>
-                <h3>{prog.title}</h3>
-                <p>{prog.description}</p>
-                <div className="programme-meta">
-                  <span><i className="fas fa-clock"></i> {prog.duration}</span>
-                  <span><i className="fas fa-graduation-cap"></i> {prog.type}</span>
-                </div>
-                <Link href={prog.link} className="programme-link">
-                  View Programme <i className="fas fa-arrow-right"></i>
-                </Link>
-              </div>
+              <ProgrammeCard key={prog.id} programme={prog} />
             ))}
           </div>
-          <div className="section-cta">
-            <Link href="/programmes" className="btn-primary">View All Programmes</Link>
+          <div className="mt-12 text-center">
+            <Button href="/programmes">
+              View All Programmes
+              <Icon name="arrow-right" className="h-4 w-4" />
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* Courses Carousel */}
-      <section className="courses-section">
-        <div className="section-container">
-          <div className="section-head">
-            <span className="section-label">Featured Courses</span>
-            <h2 className="section-title">Courses Built for the Industry</h2>
-            <p className="section-subtitle">
-              Practical, hands-on courses that align with what employers actually need. No
-              outdated theory — just enterprise-ready skills.
-            </p>
-          </div>
+      {/* Courses */}
+      <section className="py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Featured Courses"
+            title="Courses Built for the Industry"
+            subtitle="Practical, hands-on courses that align with what employers actually need. No outdated theory — just enterprise-ready skills."
+          />
           <CourseCarousel />
-          <div className="section-cta">
-            <Link href="/courses" className="btn-primary">Browse All Courses</Link>
+          <div className="mt-12 text-center">
+            <Button href="/courses">
+              Browse All Courses
+              <Icon name="arrow-right" className="h-4 w-4" />
+            </Button>
           </div>
         </div>
       </section>
@@ -125,162 +143,107 @@ export default function HomePage() {
       {/* Stats */}
       <StatsCounter />
 
-      {/* Instructors Carousel */}
-      <section className="instructors-section">
-        <div className="section-container">
-          <div className="section-head">
-            <span className="section-label">Meet Our Team</span>
-            <h2 className="section-title">Learn From Industry Experts</h2>
-            <p className="section-subtitle">
-              Our instructors aren't just academics — they're practitioners who've built real
-              systems at scale and bring that experience into the classroom.
-            </p>
-          </div>
+      {/* Instructors */}
+      <section className="py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Meet Our Team"
+            title="Learn From Industry Experts"
+            subtitle="Our instructors aren't just academics — they're practitioners who've built real systems at scale and bring that experience into the classroom."
+          />
           <InstructorCarousel />
-          <div className="section-cta">
-            <Link href="/instructors" className="btn-primary">View All Instructors</Link>
+          <div className="mt-12 text-center">
+            <Button href="/instructors">
+              View All Instructors
+              <Icon name="arrow-right" className="h-4 w-4" />
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* Gallery Preview */}
-      <section className="gallery-section bg-light">
-        <div className="section-container">
-          <div className="section-head">
-            <span className="section-label">Campus Life</span>
-            <h2 className="section-title">Life at Vellix Academy</h2>
-            <p className="section-subtitle">
-              From hackathons and tech talks to graduation ceremonies — here's a glimpse of the
-              Vellix Academy experience.
-            </p>
-          </div>
-          <div className="gallery-grid">
-            {galleryImages.slice(0, 6).map((img, i) => (
-              <div key={i} className="gallery-item">
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  fill
-                  sizes="(max-width: 768px) 50vw, 33vw"
-                  style={{ objectFit: "cover" }}
-                />
-                <div className="gallery-overlay">
-                  <i className="fas fa-expand-alt"></i>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="section-cta">
-            <Link href="/gallery" className="btn-primary">View Full Gallery</Link>
+      {/* Gallery preview */}
+      <section className="bg-slate-50 py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Campus Life"
+            title="Life at Vellix Academy"
+            subtitle="From hackathons and tech talks to graduation ceremonies — here's a glimpse of the Vellix Academy experience."
+          />
+          <GalleryGrid images={galleryImages.slice(0, 6)} />
+          <div className="mt-12 text-center">
+            <Button href="/gallery">
+              View Full Gallery
+              <Icon name="arrow-right" className="h-4 w-4" />
+            </Button>
           </div>
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className="testimonials-section">
-        <div className="section-container">
-          <div className="section-head">
-            <span className="section-label">Student Stories</span>
-            <h2 className="section-title">What Our Graduates Say</h2>
-            <p className="section-subtitle">
-              Real stories from students who transformed their careers through Vellix Academy.
-            </p>
-          </div>
+      <section className="py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Student Stories"
+            title="What Our Graduates Say"
+            subtitle="Real stories from students who transformed their careers through Vellix Academy."
+          />
           <TestimonialSlider />
         </div>
       </section>
 
-      {/* CTA Banner */}
-      <section
-        className="cta-section"
-        style={{ backgroundImage: "url(/images/about-bg.jpg)" }}
-      >
-        <div className="cta-overlay" />
-        <div className="cta-content">
-          <h2>Ready to Start Your IT Career?</h2>
-          <p>
-            Join hundreds of graduates who launched their careers in software development, data
-            science, cloud engineering and cybersecurity with Vellix Academy.
-          </p>
-          <div className="cta-btns">
-            <Link href="/register" className="btn-cta-primary">Enroll Now</Link>
-            <Link href="/contact" className="btn-cta-outline">Talk to Admissions</Link>
-          </div>
-        </div>
-      </section>
+      {/* CTA */}
+      <CtaBanner
+        title="Ready to Start Your IT Career?"
+        text="Join hundreds of graduates who launched their careers in software development, data science, cloud engineering and cybersecurity with Vellix Academy."
+        primaryLabel="Enroll Now"
+        primaryHref="/register"
+        secondaryLabel="Talk to Admissions"
+        secondaryHref="/contact"
+      />
 
-      {/* News Section */}
-      <section className="news-section bg-light">
-        <div className="section-container">
-          <div className="section-head">
-            <span className="section-label">Latest Updates</span>
-            <h2 className="section-title">News & Blog</h2>
-          </div>
-          <div className="news-grid">
+      {/* News */}
+      <section className="bg-slate-50 py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading eyebrow="Latest Updates" title="News & Blog" />
+          <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
             {newsArticles.map((article) => (
-              <article key={article.id} className="news-card">
-                <div className="news-card-img">
-                  <Image
-                    src={article.img}
-                    alt={article.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    style={{ objectFit: "cover" }}
-                  />
-                </div>
-                <div className="news-card-body">
-                  <span className="news-date">
-                    <i className="fas fa-calendar-alt"></i> {article.date}
-                  </span>
-                  <h3>{article.title}</h3>
-                  <p>{article.excerpt}</p>
-                  <Link href={article.link} className="news-link">
-                    Read More <i className="fas fa-arrow-right"></i>
-                  </Link>
-                </div>
-              </article>
+              <NewsCard key={article.id} article={article} />
             ))}
           </div>
-          <div className="section-cta">
-            <Link href="/news" className="btn-primary">View All News</Link>
+          <div className="mt-12 text-center">
+            <Button href="/news">
+              View All News
+              <Icon name="arrow-right" className="h-4 w-4" />
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* Partner Logos */}
-      <section className="partners-section">
-        <div className="section-container">
-          <div className="section-head">
-            <span className="section-label">Internationally Recognised</span>
-            <h2 className="section-title">Our Academic Partners</h2>
-          </div>
-          <div className="partners-grid">
+      {/* Partners */}
+      <section className="py-16 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Internationally Recognised"
+            title="Our Academic Partners"
+          />
+          <div className="flex flex-wrap items-center justify-center gap-12">
             {[
-              { src: "/images/logos/edexcel.png", alt: "Pearson Edexcel" },
-              { src: "/images/logos/cambridge.png", alt: "Cambridge" },
+              { src: "/images/logos/vellix.png", alt: "Vellix" },
+              { src: "/images/logos/vellix-point.png", alt: "Vellix Point" },
+              { src: "/images/logos/pos.png", alt: "POS" },
             ].map((logo) => (
-              <div key={logo.alt} className="partner-logo">
-                <Image src={logo.src} alt={logo.alt} width={160} height={60} style={{ objectFit: "contain" }} />
-              </div>
+              <Image
+                key={logo.alt}
+                src={logo.src}
+                alt={logo.alt}
+                width={160}
+                height={60}
+                className="object-contain opacity-50 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
+              />
             ))}
           </div>
         </div>
       </section>
-
-      <Footer />
-
-      {/* WhatsApp button */}
-      <a
-        href="https://wa.me/94771234567"
-        className="whatsapp-btn"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Chat on WhatsApp"
-      >
-        <i className="fab fa-whatsapp"></i>
-      </a>
-
-      <ScrollTopBtn />
     </>
   );
 }
