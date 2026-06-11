@@ -56,10 +56,8 @@ const navItems = [
 ];
 
 const socials = [
-  { icon: "facebook", href: "https://facebook.com", label: "Facebook" },
-  { icon: "twitter", href: "https://twitter.com", label: "Twitter" },
-  { icon: "instagram", href: "https://instagram.com", label: "Instagram" },
-  { icon: "linkedin", href: "https://linkedin.com", label: "LinkedIn" },
+  { icon: "facebook", href: "https://web.facebook.com/profile.php?id=61588773834092", label: "Facebook" },
+  { icon: "linkedin", href: "https://www.linkedin.com/company/115744342/", label: "LinkedIn" },
 ];
 
 export default function Header() {
@@ -87,13 +85,13 @@ export default function Header() {
       <div className="hidden bg-navy-950 text-xs text-slate-300 md:block">
         <div className="mx-auto flex h-10 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-6">
-            <a href="tel:+94112123456" className="flex items-center gap-2 transition hover:text-white">
+            <a href="tel:+94773208478" className="flex items-center gap-2 transition hover:text-white">
               <Icon name="phone" className="h-3.5 w-3.5 text-sky-400" />
-              +94 112 123 456
+              +94 77 320 8478
             </a>
-            <a href="mailto:info@vellixacademy.lk" className="flex items-center gap-2 transition hover:text-white">
+            <a href="mailto:vellixglobal@gmail.com" className="flex items-center gap-2 transition hover:text-white">
               <Icon name="mail" className="h-3.5 w-3.5 text-sky-400" />
-              info@vellixacademy.lk
+              vellixglobal@gmail.com
             </a>
           </div>
           <div className="flex items-center gap-1">

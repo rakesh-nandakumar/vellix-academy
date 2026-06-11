@@ -16,24 +16,24 @@ const quickLinks = [
 ];
 
 const socials = [
-  { icon: "facebook", href: "https://facebook.com", label: "Facebook" },
-  { icon: "twitter", href: "https://twitter.com", label: "Twitter" },
-  { icon: "instagram", href: "https://instagram.com", label: "Instagram" },
-  { icon: "linkedin", href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: "youtube", href: "https://youtube.com", label: "YouTube" },
+  { icon: "facebook", href: "https://web.facebook.com/profile.php?id=61588773834092", label: "Facebook" },
+  { icon: "linkedin", href: "https://www.linkedin.com/company/115744342/", label: "LinkedIn" },
 ];
 
 const contactItems = [
   {
     icon: "map-pin",
-    content: "123 Bauddhaloka Mawatha, Kohuwala, Colombo 06, Sri Lanka",
+    content: "Head Office: No. 54/10. 46, Sanchi Arachchi Waththa, Colombo 12, Sri Lanka",
   },
-  { icon: "phone", content: "+94 112 123 456", href: "tel:+94112123456" },
-  { icon: "smartphone", content: "+94 77 123 4567", href: "tel:+94771234567" },
+  {
+    icon: "map-pin",
+    content: "Operational Office: No.16, King Street, Badulla",
+  },
+  { icon: "phone", content: "+94 77 320 8478", href: "tel:+94773208478" },
   {
     icon: "mail",
-    content: "info@vellixacademy.lk",
-    href: "mailto:info@vellixacademy.lk",
+    content: "vellixglobal@gmail.com",
+    href: "mailto:vellixglobal@gmail.com",
   },
   { icon: "clock", content: "Mon – Sat: 8:00 AM – 7:00 PM" },
 ];

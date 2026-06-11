@@ -8,29 +8,30 @@ export const metadata = {
     "Get in touch with Vellix Academy. Ask about programmes, fees and admissions — we'll respond within 24 hours.",
 };
 
+// Contact info sourced from Vellix Global (parent company)
+
 const contactDetails = [
   {
     icon: "map-pin",
-    title: "Visit Us",
-    content: "123 Bauddhaloka Mawatha, Kohuwala, Colombo 06",
+    title: "Head Office",
+    content: "No. 54/10. 46, Sanchi Arachchi Waththa, Colombo 12, Sri Lanka",
+  },
+  {
+    icon: "map-pin",
+    title: "Operational Office",
+    content: "No.16, King Street, Badulla",
   },
   {
     icon: "phone",
-    title: "Call Us",
-    content: "+94 112 123 456",
-    href: "tel:+94112123456",
-  },
-  {
-    icon: "smartphone",
-    title: "Mobile / WhatsApp",
-    content: "+94 77 123 4567",
-    href: "tel:+94771234567",
+    title: "Call / WhatsApp",
+    content: "+94 77 320 8478",
+    href: "tel:+94773208478",
   },
   {
     icon: "mail",
     title: "Email Us",
-    content: "info@vellixacademy.lk",
-    href: "mailto:info@vellixacademy.lk",
+    content: "vellixglobal@gmail.com",
+    href: "mailto:vellixglobal@gmail.com",
   },
   {
     icon: "clock",
