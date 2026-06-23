@@ -20,7 +20,7 @@ export default function EventsPage() {
           <SectionHeading
             eyebrow="What's On"
             title="Upcoming Events"
-            subtitle="From hackathons and tech talks to programme launch days and open campus events — there's always something happening at Vellix Academy."
+            subtitle="Start Your Technology Journey with Vellix Academy. From foundation learning to professional specialization pathways, build the skills needed for a successful career in technology."
           />
 
           <div className="mx-auto max-w-4xl space-y-5">
@@ -51,6 +51,31 @@ export default function EventsPage() {
                   <p className="mt-1.5 text-sm leading-relaxed text-slate-500">
                     {event.description}
                   </p>
+                  {event.lecturers && (
+                    <p className="mt-2 text-xs text-slate-600">
+                      <span className="font-semibold">Lecturers:</span> {event.lecturers.join(", ")}
+                    </p>
+                  )}
+                  {event.pathways && (
+                    <div className="mt-2 text-xs text-slate-600">
+                      <span className="font-semibold">Pathways:</span>
+                      <ul className="mt-1 ml-4 list-disc space-y-0.5">
+                        {event.pathways.map((pathway, idx) => (
+                          <li key={idx}>{pathway}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {event.tracks && (
+                    <div className="mt-2 text-xs text-slate-600">
+                      <span className="font-semibold">Available Tracks:</span>
+                      <ul className="mt-1 ml-4 list-disc space-y-0.5">
+                        {event.tracks.map((track, idx) => (
+                          <li key={idx}>{track}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                   <p className="mt-3 flex items-center gap-1.5 text-xs font-medium text-slate-500">
                     <Icon name="map-pin" className="h-3.5 w-3.5 text-sky-500" />
                     {event.location}
@@ -59,7 +84,7 @@ export default function EventsPage() {
 
                 <div className="shrink-0">
                   <Button href="/contact" size="sm">
-                    Register
+                    {event.buttonText || "Register"}
                   </Button>
                 </div>
               </article>

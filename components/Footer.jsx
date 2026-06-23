@@ -23,19 +23,14 @@ const socials = [
 const contactItems = [
   {
     icon: "map-pin",
-    content: "Head Office: No. 54/10. 46, Sanchi Arachchi Waththa, Colombo 12, Sri Lanka",
-  },
-  {
-    icon: "map-pin",
-    content: "Operational Office: No.16, King Street, Badulla",
+    content: "Academic Branch: No.16, King Street, Badulla",
   },
   { icon: "phone", content: "+94 77 320 8478", href: "tel:+94773208478" },
   {
     icon: "mail",
-    content: "vellixglobal@gmail.com",
-    href: "mailto:vellixglobal@gmail.com",
+    content: "info@vellixacademy@gmail.com",
+    href: "mailto:info@vellixacademy@gmail.com",
   },
-  { icon: "clock", content: "Mon – Sat: 8:00 AM – 7:00 PM" },
 ];
 
 function FooterHeading({ children }) {
@@ -53,13 +48,14 @@ export default function Footer() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1.2fr] lg:gap-16">
           {/* Brand */}
           <div>
-            <Link href="/" className="inline-block">
+            <Link href="/" className="inline-block bg-transparent">
               <Image
-                src="/images/logos/logo-dark.png"
+                src="/images/logo.png"
                 alt="Vellix Academy"
-                width={170}
-                height={52}
-                className="h-11 w-auto object-contain brightness-0 invert"
+                width={280}
+                height={84}
+                className="h-20 w-auto object-contain brightness-0 invert"
+                style={{ backgroundColor: 'transparent' }}
               />
             </Link>
             <p className="mt-5 text-sm leading-relaxed">

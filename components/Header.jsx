@@ -47,7 +47,7 @@ const navItems = [
     children: [
       { label: "Events", href: "/events" },
       { label: "News & Blog", href: "/news" },
-      { label: "Testimonials", href: "/testimonials" },
+      { label: "Why Choose Us", href: "/why-choose-us" },
       { label: "FAQ", href: "/faq" },
       { label: "Careers", href: "/careers" },
     ],
@@ -86,12 +86,12 @@ export default function Header() {
         <div className="mx-auto flex h-10 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-6">
             <a href="tel:+94773208478" className="flex items-center gap-2 transition hover:text-white">
-              <Icon name="phone" className="h-3.5 w-3.5 text-sky-400" />
+              <Icon name="phone" className="h-4 w-4 text-sky-400" />
               +94 77 320 8478
             </a>
-            <a href="mailto:vellixglobal@gmail.com" className="flex items-center gap-2 transition hover:text-white">
-              <Icon name="mail" className="h-3.5 w-3.5 text-sky-400" />
-              vellixglobal@gmail.com
+            <a href="mailto:info@vellixacademy@gmail.com" className="flex items-center gap-2 transition hover:text-white">
+              <Icon name="mail" className="h-4 w-4 text-sky-400" />
+              info@vellixacademy@gmail.com
             </a>
           </div>
           <div className="flex items-center gap-1">
@@ -104,7 +104,7 @@ export default function Header() {
                 aria-label={s.label}
                 className="flex h-7 w-7 items-center justify-center rounded-full transition hover:bg-white/10 hover:text-white"
               >
-                <Icon name={s.icon} className="h-3.5 w-3.5" />
+                <Icon name={s.icon} className="h-4 w-4" />
               </a>
             ))}
             <span className="mx-3 h-4 w-px bg-white/15" />
@@ -126,14 +126,15 @@ export default function Header() {
       >
         <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
           {/* Logo */}
-          <Link href="/" className="shrink-0">
+          <Link href="/" className="shrink-0 bg-transparent">
             <Image
-              src="/images/logos/logo-dark.png"
+              src="/images/logo.png"
               alt="Vellix Academy"
-              width={168}
-              height={50}
+              width={280}
+              height={84}
               priority
-              className="h-11 w-auto object-contain"
+              className="h-20 w-auto object-contain"
+              style={{ backgroundColor: 'transparent' }}
             />
           </Link>
 
@@ -222,13 +223,16 @@ export default function Header() {
         }`}
       >
         <div className="flex items-center justify-between border-b border-slate-100 px-5 py-4">
-          <Image
-            src="/images/logos/logo-dark.png"
-            alt="Vellix Academy"
-            width={140}
-            height={42}
-            className="h-9 w-auto object-contain"
-          />
+          <div className="bg-transparent">
+            <Image
+              src="/images/logo.png"
+              alt="Vellix Academy"
+              width={160}
+              height={48}
+              className="h-11 w-auto object-contain"
+              style={{ backgroundColor: 'transparent' }}
+            />
+          </div>
           <button
             onClick={() => setDrawerOpen(false)}
             aria-label="Close menu"
