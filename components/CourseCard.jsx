@@ -19,15 +19,23 @@ export default function CourseCard({ course }) {
       </div>
 
       <div className="flex flex-1 flex-col p-6">
-        <div className="mb-3 flex items-center gap-4 text-xs font-medium text-slate-500">
+        <div className="mb-3 flex flex-wrap items-center gap-3 text-xs font-medium text-slate-500">
           <span className="flex items-center gap-1.5">
             <Icon name="clock" className="h-3.5 w-3.5 text-sky-500" />
             {course.duration}
           </span>
-          <span className="flex items-center gap-1.5">
-            <Icon name="graduation-cap" className="h-3.5 w-3.5 text-sky-500" />
-            {course.type}
-          </span>
+          {course.schedule && (
+            <span className="flex items-center gap-1.5">
+              <Icon name="calendar" className="h-3.5 w-3.5 text-sky-500" />
+              {course.schedule}
+            </span>
+          )}
+          {course.level && (
+            <span className="flex items-center gap-1.5">
+              <Icon name="graduation-cap" className="h-3.5 w-3.5 text-sky-500" />
+              {course.level}
+            </span>
+          )}
         </div>
 
         <h3 className="font-display text-lg font-bold text-navy-950">
@@ -41,18 +49,28 @@ export default function CourseCard({ course }) {
 
         <div className="mt-5 flex items-center justify-between border-t border-slate-100 pt-4">
           <div className="flex items-center gap-2.5">
-            <span className="relative h-8 w-8 overflow-hidden rounded-full bg-slate-100">
-              <Image
-                src={course.instructorImg}
-                alt={course.instructor}
-                fill
-                sizes="32px"
-                className="object-cover"
-              />
-            </span>
-            <span className="text-xs font-medium text-slate-600">
-              {course.instructor}
-            </span>
+            {course.lecturers && course.lecturers.length > 0 ? (
+              <>
+                <span className="text-xs font-medium text-slate-600">
+                  {course.lecturers.length === 1 ? course.lecturers[0] : `${course.lecturers[0]} +${course.lecturers.length - 1}`}
+                </span>
+              </>
+            ) : course.instructor ? (
+              <>
+                <span className="relative h-8 w-8 overflow-hidden rounded-full bg-slate-100">
+                  <Image
+                    src={course.instructorImg}
+                    alt={course.instructor}
+                    fill
+                    sizes="32px"
+                    className="object-cover"
+                  />
+                </span>
+                <span className="text-xs font-medium text-slate-600">
+                  {course.instructor}
+                </span>
+              </>
+            ) : null}
           </div>
           <Link
             href={course.link}

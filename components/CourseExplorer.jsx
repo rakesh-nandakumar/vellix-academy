@@ -5,11 +5,10 @@ import { courses } from "@/lib/data";
 
 const categories = [
   { id: "all", label: "All Courses" },
-  { id: "software-engineering", label: "Software Engineering" },
-  { id: "data-science", label: "Data Science" },
-  { id: "cloud", label: "Cloud & DevOps" },
-  { id: "security", label: "Cybersecurity" },
-  { id: "management", label: "IT Management" },
+  { id: "foundation", label: "Foundation" },
+  { id: "business-it", label: "Business IT" },
+  { id: "software-development", label: "Software Development" },
+  { id: "cybersecurity", label: "Cybersecurity" },
 ];
 
 export default function CourseExplorer() {
