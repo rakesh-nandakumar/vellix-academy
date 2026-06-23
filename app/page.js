@@ -101,39 +101,17 @@ export default function HomePage() {
       </section>
 
       {/* Programmes */}
-      <section className="bg-slate-50 py-20 sm:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="What We Offer"
-            title="Our Enterprise IT Programmes"
-            subtitle="Choose from intensive full-time bootcamps or flexible part-time tracks — all built around real enterprise skills."
-          />
-          <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
-            {programmes.slice(0, 6).map((prog) => (
-              <ProgrammeCard key={prog.id} programme={prog} />
-            ))}
-          </div>
-          <div className="mt-12 text-center">
-            <Button href="/programmes">
-              View All Programmes
-              <Icon name="arrow-right" className="h-4 w-4" />
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Courses */}
       <section className="py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            eyebrow="Featured Courses"
-            title="Courses Built for the Industry"
-            subtitle="Practical, hands-on courses that align with what employers actually need. No outdated theory — just enterprise-ready skills."
+            eyebrow="Featured Programmes"
+            title="Programmes Built for the Industry"
+            subtitle="Practical, hands-on programmes that align with what employers actually need. No outdated theory — just enterprise-ready skills."
           />
           <CourseCarousel />
           <div className="mt-12 text-center">
-            <Button href="/courses">
-              Browse All Courses
+            <Button href="/programmes">
+              Browse All Programmes
               <Icon name="arrow-right" className="h-4 w-4" />
             </Button>
           </div>

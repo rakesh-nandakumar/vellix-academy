@@ -1,13 +1,37 @@
 import PageBanner from "@/components/PageBanner";
 import SectionHeading from "@/components/SectionHeading";
-import ProgrammeCard from "@/components/ProgrammeCard";
-import CtaBanner from "@/components/CtaBanner";
-import { programmes } from "@/lib/data";
+import CourseExplorer from "@/components/CourseExplorer";
+import Icon from "@/components/Icon";
 
 export const metadata = {
   title: "Programmes – Vellix Academy",
   description:
-    "Explore enterprise IT programmes at Vellix Academy. Full-time bootcamps and part-time tracks in software development, data science, cloud computing and cybersecurity.",
+    "Browse enterprise IT programmes at Vellix Academy. Foundation, Business IT, Software Development, and Cybersecurity programmes.",
+};
+
+const futurePrograms = {
+  technology: [
+    "Cloud Computing",
+    "Data Analytics & Power BI",
+    "Mobile App Development",
+    "UI/UX Design",
+    "Artificial Intelligence & Automation",
+  ],
+  professionalSkills: [
+    "Business English",
+    "Career Development",
+    "Professional Communication",
+  ],
+  digitalBusiness: [
+    "Digital Marketing",
+    "CRM & Customer Experience",
+    "Project Management",
+  ],
+  businessManagement: [
+    "Human Resource Management",
+    "Entrepreneurship & Startup Development",
+    "Business Operations",
+  ],
 };
 
 export default function ProgrammesPage() {
@@ -18,26 +42,108 @@ export default function ProgrammesPage() {
       <section className="py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            eyebrow="What We Offer"
-            title="Enterprise IT Programmes"
-            subtitle="Choose from intensive full-time bootcamps or flexible part-time tracks. Every programme is built around production-grade enterprise skills and includes real project deliverables."
+            eyebrow="Industry Readiness"
+            title="Programmes Built for Industry Readiness"
+            subtitle="Our programmes are designed to bridge the gap between education and real-world industry requirements through practical learning, business scenarios, projects, and career-focused training."
           />
-          <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
-            {programmes.map((prog) => (
-              <ProgrammeCard key={prog.id} programme={prog} detailed />
-            ))}
-          </div>
+          <CourseExplorer />
         </div>
       </section>
 
-      <CtaBanner
-        title="Not Sure Which Programme to Choose?"
-        text="Talk to our admissions team and we'll help you find the right fit for your goals and background."
-        primaryLabel="Talk to Admissions"
-        primaryHref="/contact"
-        secondaryLabel="Apply Now"
-        secondaryHref="/register"
-      />
+      <section className="bg-gradient-to-br from-navy-950 via-navy-900 to-slate-900 py-16 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Coming Soon"
+            title="Future Programmes"
+            subtitle="We are continuously expanding our curriculum to meet industry demands. Stay tuned for these upcoming programmes."
+            dark
+          />
+
+          <div className="mt-12 overflow-hidden">
+            <div className="flex animate-marquee gap-8">
+              {[...futurePrograms.technology, ...futurePrograms.professionalSkills, ...futurePrograms.digitalBusiness, ...futurePrograms.businessManagement, ...futurePrograms.technology, ...futurePrograms.professionalSkills, ...futurePrograms.digitalBusiness, ...futurePrograms.businessManagement].map((program, idx) => (
+                <div
+                  key={idx}
+                  className="flex shrink-0 items-center gap-3 rounded-xl border border-sky-500/30 bg-navy-800/50 px-6 py-4 backdrop-blur-sm"
+                >
+                  <span className="h-2 w-2 shrink-0 rounded-full bg-sky-400" />
+                  <span className="text-sm font-medium text-sky-100">{program}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <div className="rounded-2xl border border-sky-500/30 bg-navy-800/50 p-6 backdrop-blur-sm">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-sky-500/20 text-sky-400">
+                <Icon name="cpu" className="h-6 w-6" />
+              </div>
+              <h3 className="font-display text-lg font-bold text-white">
+                School of Technology
+              </h3>
+              <ul className="mt-4 space-y-2">
+                {futurePrograms.technology.map((program, idx) => (
+                  <li key={idx} className="flex items-start gap-2 text-sm text-slate-300">
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-400" />
+                    {program}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-sky-500/30 bg-navy-800/50 p-6 backdrop-blur-sm">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-sky-500/20 text-sky-400">
+                <Icon name="user" className="h-6 w-6" />
+              </div>
+              <h3 className="font-display text-lg font-bold text-white">
+                School of Professional Skills
+              </h3>
+              <ul className="mt-4 space-y-2">
+                {futurePrograms.professionalSkills.map((program, idx) => (
+                  <li key={idx} className="flex items-start gap-2 text-sm text-slate-300">
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-400" />
+                    {program}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-sky-500/30 bg-navy-800/50 p-6 backdrop-blur-sm">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-sky-500/20 text-sky-400">
+                <Icon name="globe" className="h-6 w-6" />
+              </div>
+              <h3 className="font-display text-lg font-bold text-white">
+                School of Digital Business
+              </h3>
+              <ul className="mt-4 space-y-2">
+                {futurePrograms.digitalBusiness.map((program, idx) => (
+                  <li key={idx} className="flex items-start gap-2 text-sm text-slate-300">
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-400" />
+                    {program}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-sky-500/30 bg-navy-800/50 p-6 backdrop-blur-sm">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-sky-500/20 text-sky-400">
+                <Icon name="briefcase" className="h-6 w-6" />
+              </div>
+              <h3 className="font-display text-lg font-bold text-white">
+                School of Business & Management
+              </h3>
+              <ul className="mt-4 space-y-2">
+                {futurePrograms.businessManagement.map((program, idx) => (
+                  <li key={idx} className="flex items-start gap-2 text-sm text-slate-300">
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-400" />
+                    {program}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

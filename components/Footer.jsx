@@ -5,7 +5,6 @@ import Icon from "@/components/Icon";
 const quickLinks = [
   { label: "About Us", href: "/about" },
   { label: "Programmes", href: "/programmes" },
-  { label: "Courses", href: "/courses" },
   { label: "Instructors", href: "/instructors" },
   { label: "Gallery", href: "/gallery" },
   { label: "Events", href: "/events" },

@@ -4,7 +4,7 @@ import CourseCard from "@/components/CourseCard";
 import { courses } from "@/lib/data";
 
 const categories = [
-  { id: "all", label: "All Courses" },
+  { id: "all", label: "All Programmes" },
   { id: "foundation", label: "Foundation" },
   { id: "business-it", label: "Business IT" },
   { id: "software-development", label: "Software Development" },

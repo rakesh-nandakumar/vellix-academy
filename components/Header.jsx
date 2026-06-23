@@ -21,24 +21,10 @@ const navItems = [
     href: "/programmes",
     children: [
       { label: "All Programmes", href: "/programmes" },
-      { label: "Enterprise Developer Track", href: "/programmes/enterprise-developer-track" },
-      { label: "Data Science Bootcamp", href: "/programmes/data-science-bootcamp" },
-      { label: "Cloud & DevOps Track", href: "/programmes/cloud-devops-track" },
-      { label: "Part-Time Developer Program", href: "/programmes/part-time-software-developer" },
-      { label: "Cybersecurity Track", href: "/programmes/cybersecurity-professional" },
-    ],
-  },
-  {
-    label: "Courses",
-    href: "/courses",
-    children: [
-      { label: "All Courses", href: "/courses" },
-      { label: "Full-Stack Web Development", href: "/courses/full-stack-web-development" },
-      { label: "Enterprise Java & Spring Boot", href: "/courses/enterprise-java-spring-boot" },
-      { label: "Data Science & Machine Learning", href: "/courses/data-science-machine-learning" },
-      { label: "Cloud Architecture (AWS & Azure)", href: "/courses/cloud-architecture-aws-azure" },
-      { label: "DevOps & CI/CD", href: "/courses/devops-cicd-pipeline" },
-      { label: "Cybersecurity Fundamentals", href: "/courses/cybersecurity-fundamentals" },
+      { label: "Foundation in Information Technology (FIT)", href: "/programmes/foundation-in-information-technology" },
+      { label: "Business IT & Digital Transformation", href: "/programmes/business-it-digital-transformation" },
+      { label: "Full-Stack Development & Software Delivery", href: "/programmes/full-stack-development-software-delivery" },
+      { label: "Cybersecurity Fundamentals & Defensive Security", href: "/programmes/cybersecurity-fundamentals-defensive-security" },
     ],
   },
   {
