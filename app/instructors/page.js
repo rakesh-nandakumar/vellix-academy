@@ -21,7 +21,7 @@ export default function InstructorsPage() {
             title="Learn From Industry Experts"
             subtitle="Our instructors are practitioners first. They've built real systems, led real teams, and they bring that experience into every session."
           />
-          <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3 max-w-4xl mx-auto">
             {instructors.map((ins) => (
               <InstructorCard key={ins.slug} instructor={ins} showQualifications />
             ))}

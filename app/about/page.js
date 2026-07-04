@@ -33,7 +33,7 @@ export default function AboutPage() {
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-20 lg:px-8">
           <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-2xl shadow-navy-950/15 max-lg:aspect-[16/11]">
             <Image
-              src="/images/cta-image.jpg"
+              src="/images/about-story.jpg"
               alt="Vellix Academy campus"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -120,9 +120,9 @@ export default function AboutPage() {
                 <Image
                   src="/images/logos/vellix-global.png"
                   alt="Vellix Global Logo"
-                  width={250}
-                  height={100}
-                  className="max-h-28 w-auto object-contain"
+                  width={200}
+                  height={80}
+                  className="max-h-24 w-auto object-contain"
                 />
               </div>
               <h3 className="font-display text-2xl font-bold text-navy-950 text-center">Vellix Global</h3>
@@ -135,9 +135,9 @@ export default function AboutPage() {
                 <Image
                   src="/images/logos/vellix-point.png"
                   alt="Vellix Point Logo"
-                  width={250}
-                  height={100}
-                  className="max-h-28 w-auto object-contain"
+                  width={200}
+                  height={80}
+                  className="max-h-24 w-auto object-contain"
                 />
               </div>
               <h3 className="font-display text-2xl font-bold text-navy-950 text-center">Vellix Point</h3>
@@ -180,12 +180,12 @@ export default function AboutPage() {
               desc="Programs developed with insights from real business operations and technology projects."
             />
             <ValueCard
-              icon="tool"
+              icon="code"
               title="Practical Skills First"
               desc="Focus on hands-on activities, case studies, workshops, and project-based learning."
             />
             <ValueCard
-              icon="layers"
+              icon="cpu"
               title="Technology & Business Combined"
               desc="Learn not only technical concepts but also how technology supports business growth."
             />
@@ -223,10 +223,10 @@ export default function AboutPage() {
             <div className="space-y-8 md:space-y-0">
               {[
                 { step: "Foundation in Information Technology (FIT)", icon: "graduation-cap" },
-                { step: "Choose Your Specialization", icon: "layers" },
-                { step: "Professional Program", icon: "book" },
+                { step: "Choose Your Specialization", icon: "network" },
+                { step: "Professional Program", icon: "target" },
                 { step: "Industry Projects & Practical Experience", icon: "briefcase" },
-                { step: "Career Development", icon: "trending-up" },
+                { step: "Career Development", icon: "arrow-up" },
                 { step: "Future Professional", icon: "award" },
               ].map((item, idx) => (
                 <div key={idx} className="relative flex items-center md:grid md:grid-cols-2 md:gap-12">

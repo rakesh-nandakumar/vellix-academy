@@ -4,7 +4,7 @@ import Icon from "@/components/Icon";
 export default function InstructorCard({ instructor, showQualifications = false }) {
   return (
     <article className="group h-full overflow-hidden rounded-2xl border border-slate-200 bg-white text-center transition-all duration-300 hover:-translate-y-1.5 hover:border-transparent hover:shadow-xl hover:shadow-navy-950/10">
-      <div className="relative aspect-square overflow-hidden bg-slate-100">
+      <div className="relative aspect-[3/4] overflow-hidden bg-slate-100">
         <Image
           src={instructor.img}
           alt={instructor.name}
