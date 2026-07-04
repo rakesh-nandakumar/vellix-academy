@@ -11,7 +11,8 @@ import GalleryGrid from "@/components/GalleryGrid";
 import CtaBanner from "@/components/CtaBanner";
 import Button from "@/components/Button";
 import Icon from "@/components/Icon";
-import { newsArticles, programmes, galleryImages } from "@/lib/data";
+import InstructorCard from "@/components/InstructorCard";
+import { newsArticles, programmes, galleryImages, instructors } from "@/lib/data";
 
 export const metadata = {
   title: "Vellix Academy – Enterprise IT & Software Development Courses",
@@ -20,7 +21,7 @@ export const metadata = {
 };
 
 const aboutPoints = [
-  "37+ industry-expert instructors",
+  "3+ industry-expert instructors",
   "Real enterprise project deliverables",
   "Career placement for top performers",
   "Campus & online flexible options",
@@ -37,7 +38,7 @@ export default function HomePage() {
           <div className="relative">
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-2xl shadow-navy-950/15 max-lg:aspect-[16/11]">
               <Image
-                src="/images/cta-image.jpg"
+                src="/images/about-vellix-academy.png"
                 alt="Vellix Academy students"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -129,7 +130,11 @@ export default function HomePage() {
             title="Learn From Industry Experts"
             subtitle="Our instructors aren't just academics — they're practitioners who've built real systems at scale and bring that experience into the classroom."
           />
-          <InstructorCarousel />
+          <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3 max-w-4xl mx-auto">
+            {instructors.map((ins) => (
+              <InstructorCard key={ins.slug} instructor={ins} />
+            ))}
+          </div>
           <div className="mt-12 text-center">
             <Button href="/instructors">
               View All Instructors
