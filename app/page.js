@@ -50,7 +50,7 @@ export default function HomePage() {
                 <Icon name="award" className="h-6 w-6" />
               </span>
               <div>
-                <p className="font-display text-2xl font-extrabold text-navy-950">500+</p>
+                <p className="font-display text-2xl font-extrabold text-navy-950">200+</p>
                 <p className="text-xs font-medium text-slate-500">Graduates Employed</p>
               </div>
             </div>
