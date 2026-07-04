@@ -145,7 +145,7 @@ export default function HomePage() {
       </section>
 
       {/* Gallery preview */}
-      <section className="bg-slate-50 py-20 sm:py-24">
+      {/* <section className="bg-slate-50 py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Campus Life"
@@ -160,7 +160,7 @@ export default function HomePage() {
             </Button>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Testimonials */}
       <section className="py-20 sm:py-24">

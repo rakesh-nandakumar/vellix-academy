@@ -13,7 +13,7 @@ const navItems = [
     children: [
       { label: "About Us", href: "/about" },
       { label: "Our Instructors", href: "/instructors" },
-      { label: "Gallery", href: "/gallery" },
+      // { label: "Gallery", href: "/gallery" },
     ],
   },
   {
