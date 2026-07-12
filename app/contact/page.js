@@ -23,6 +23,12 @@ const contactDetails = [
     href: "tel:+94773208478",
   },
   {
+    icon: "phone",
+    title: "Secondary Contact",
+    content: "+94 76 375 5374",
+    href: "tel:+94763755374",
+  },
+  {
     icon: "mail",
     title: "Email Us",
     content: "info@vellixacademy@gmail.com",

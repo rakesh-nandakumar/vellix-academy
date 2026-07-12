@@ -17,6 +17,23 @@ export default function ContactForm() {
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const lines = [
+      `Hi Vellix Academy, I'd like to get in touch.`,
+      ``,
+      `Name: ${form.name}`,
+      form.email ? `Email: ${form.email}` : "",
+      form.phone ? `Phone: ${form.phone}` : "",
+      form.subject ? `Subject: ${form.subject}` : "",
+      form.message ? `Message: ${form.message}` : "",
+    ]
+      .filter((l) => l !== undefined)
+      .join("\n");
+
+    const whatsappNumber = "94773208478";
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(lines)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+
     setSent(true);
   };
 
