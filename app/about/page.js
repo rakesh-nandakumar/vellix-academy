@@ -227,6 +227,7 @@ export default function AboutPage() {
                 { step: "Professional Program", icon: "target" },
                 { step: "Industry Projects & Practical Experience", icon: "briefcase" },
                 { step: "Career Development", icon: "arrow-up" },
+                { step: "Artificial Intelligence Module", icon: "cpu", highlight: true },
                 { step: "Future Professional", icon: "award" },
               ].map((item, idx) => (
                 <div key={idx} className="relative flex items-center md:grid md:grid-cols-2 md:gap-12">
@@ -234,15 +235,21 @@ export default function AboutPage() {
                     <>
                       <div className="hidden md:block" />
                       <div className="relative md:pl-8">
-                        <div className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:flex h-10 w-10 items-center justify-center rounded-full bg-sky-500 text-white shadow-lg shadow-sky-500/30 z-10">
+                        <div className={`absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:flex h-10 w-10 items-center justify-center rounded-full text-white shadow-lg z-10 ${item.highlight ? 'bg-gradient-to-br from-amber-400 to-orange-500 shadow-amber-500/30' : 'bg-sky-500 shadow-sky-500/30'}`}>
                           <Icon name={item.icon} className="h-5 w-5" />
                         </div>
-                        <div className="rounded-2xl border border-sky-200 bg-white p-6 shadow-lg shadow-navy-950/5 hover:shadow-xl hover:shadow-navy-950/10 transition-all duration-300">
+                        <div className={`rounded-2xl border p-6 shadow-lg hover:shadow-xl transition-all duration-300 ${item.highlight ? 'border-amber-400 bg-gradient-to-br from-amber-50 to-orange-50 shadow-amber-500/20 hover:shadow-amber-500/30' : 'border-sky-200 bg-white shadow-navy-950/5 hover:shadow-navy-950/10'}`}>
                           <div className="flex items-center gap-3 mb-2">
                             <span className="flex hidden md:hidden h-8 w-8 items-center justify-center rounded-full bg-sky-500 text-white text-sm font-bold">
                               {idx + 1}
                             </span>
-                            <span className="text-xs font-semibold text-sky-600 uppercase tracking-wider">Step {idx + 1}</span>
+                            <span className={`text-xs font-semibold uppercase tracking-wider ${item.highlight ? 'text-amber-700' : 'text-sky-600'}`}>Step {idx + 1}</span>
+                            {item.highlight && (
+                              <span className="inline-flex items-center gap-1 rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-amber-700">
+                                <Icon name="zap" className="h-3 w-3" />
+                                Coming 2027
+                              </span>
+                            )}
                           </div>
                           <p className="font-display text-lg font-bold text-navy-950">{item.step}</p>
                         </div>
@@ -251,15 +258,21 @@ export default function AboutPage() {
                   ) : (
                     <>
                       <div className="relative md:pr-8">
-                        <div className="absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2 hidden md:flex h-10 w-10 items-center justify-center rounded-full bg-sky-500 text-white shadow-lg shadow-sky-500/30 z-10">
+                        <div className={`absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2 hidden md:flex h-10 w-10 items-center justify-center rounded-full text-white shadow-lg z-10 ${item.highlight ? 'bg-gradient-to-br from-amber-400 to-orange-500 shadow-amber-500/30' : 'bg-sky-500 shadow-sky-500/30'}`}>
                           <Icon name={item.icon} className="h-5 w-5" />
                         </div>
-                        <div className="rounded-2xl border border-sky-200 bg-white p-6 shadow-lg shadow-navy-950/5 hover:shadow-xl hover:shadow-navy-950/10 transition-all duration-300">
+                        <div className={`rounded-2xl border p-6 shadow-lg hover:shadow-xl transition-all duration-300 ${item.highlight ? 'border-amber-400 bg-gradient-to-br from-amber-50 to-orange-50 shadow-amber-500/20 hover:shadow-amber-500/30' : 'border-sky-200 bg-white shadow-navy-950/5 hover:shadow-navy-950/10'}`}>
                           <div className="flex items-center gap-3 mb-2">
                             <span className="flex hidden md:hidden h-8 w-8 items-center justify-center rounded-full bg-sky-500 text-white text-sm font-bold">
                               {idx + 1}
                             </span>
-                            <span className="text-xs font-semibold text-sky-600 uppercase tracking-wider">Step {idx + 1}</span>
+                            <span className={`text-xs font-semibold uppercase tracking-wider ${item.highlight ? 'text-amber-700' : 'text-sky-600'}`}>Step {idx + 1}</span>
+                            {item.highlight && (
+                              <span className="inline-flex items-center gap-1 rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-amber-700">
+                                <Icon name="zap" className="h-3 w-3" />
+                                Coming 2027
+                              </span>
+                            )}
                           </div>
                           <p className="font-display text-lg font-bold text-navy-950">{item.step}</p>
                         </div>

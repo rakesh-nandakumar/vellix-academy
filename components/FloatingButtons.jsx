@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import Icon from "@/components/Icon";
 
 export default function FloatingButtons() {
@@ -18,10 +19,18 @@ export default function FloatingButtons() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
-        className="fixed bottom-6 left-6 z-40 flex h-13 w-13 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-[#25D366]/40 transition hover:-translate-y-1 hover:shadow-xl"
+        className="fixed bottom-6 left-6 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-[#25D366]/40 transition hover:-translate-y-1 hover:shadow-xl"
       >
         <Icon name="whatsapp" className="h-6 w-6" />
       </a>
+
+      <Link
+        href="/programmes/artificial-intelligence"
+        aria-label="AI Module - Coming Soon"
+        className="fixed bottom-6 left-24 z-40 flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-amber-400 to-orange-500 text-white shadow-lg shadow-amber-500/40 transition hover:-translate-y-1 hover:shadow-xl"
+      >
+        <Icon name="cpu" className="h-5 w-5" />
+      </Link>
 
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}

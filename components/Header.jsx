@@ -25,6 +25,7 @@ const navItems = [
       { label: "Business IT & Digital Transformation", href: "/programmes/business-it-digital-transformation" },
       { label: "Full-Stack Development & Software Delivery", href: "/programmes/full-stack-development-software-delivery" },
       { label: "Cybersecurity Fundamentals & Defensive Security", href: "/programmes/cybersecurity-fundamentals-defensive-security" },
+      { label: "Artificial Intelligence", href: "/programmes/artificial-intelligence", badge: "Coming Soon" },
     ],
   },
   {
@@ -161,9 +162,14 @@ export default function Header() {
                         <li key={child.href}>
                           <Link
                             href={child.href}
-                            className="block rounded-lg px-3.5 py-2.5 text-sm text-slate-600 transition hover:bg-sky-50 hover:text-sky-600"
+                            className="flex items-center justify-between rounded-lg px-3.5 py-2.5 text-sm text-slate-600 transition hover:bg-sky-50 hover:text-sky-600"
                           >
                             {child.label}
+                            {child.badge && (
+                              <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-amber-700">
+                                {child.badge}
+                              </span>
+                            )}
                           </Link>
                         </li>
                       ))}
@@ -260,9 +266,14 @@ export default function Header() {
                           <Link
                             href={child.href}
                             onClick={() => setDrawerOpen(false)}
-                            className="block rounded-lg px-5 py-2.5 text-sm text-slate-500 transition hover:bg-sky-50 hover:text-sky-600"
+                            className="flex items-center justify-between rounded-lg px-5 py-2.5 text-sm text-slate-500 transition hover:bg-sky-50 hover:text-sky-600"
                           >
                             {child.label}
+                            {child.badge && (
+                              <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-amber-700">
+                                {child.badge}
+                              </span>
+                            )}
                           </Link>
                         </li>
                       ))}

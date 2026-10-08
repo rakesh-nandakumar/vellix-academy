@@ -3,8 +3,14 @@ import Link from "next/link";
 import Icon from "@/components/Icon";
 
 export default function CourseCard({ course }) {
+  const isAI = course.category === "ai";
+
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all duration-300 hover:-translate-y-1.5 hover:border-transparent hover:shadow-xl hover:shadow-navy-950/10">
+    <article className={`group flex h-full flex-col overflow-hidden rounded-2xl border bg-white transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl ${
+      isAI
+        ? "border-amber-400 shadow-amber-500/20 hover:border-amber-500 hover:shadow-amber-500/30"
+        : "border-slate-200 hover:border-transparent hover:shadow-navy-950/10"
+    }`}>
       <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
         <Image
           src={course.thumbnail}
@@ -13,7 +19,11 @@ export default function CourseCard({ course }) {
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        <span className="absolute left-4 top-4 rounded-full bg-navy-950/85 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-sky-300 backdrop-blur-sm">
+        <span className={`absolute left-4 top-4 rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-wider backdrop-blur-sm ${
+          isAI
+            ? "bg-amber-500 text-white"
+            : "bg-navy-950/85 text-sky-300"
+        }`}>
           {course.categoryLabel}
         </span>
       </div>
@@ -21,25 +31,25 @@ export default function CourseCard({ course }) {
       <div className="flex flex-1 flex-col p-6">
         <div className="mb-3 flex flex-wrap items-center gap-3 text-xs font-medium text-slate-500">
           <span className="flex items-center gap-1.5">
-            <Icon name="clock" className="h-3.5 w-3.5 text-sky-500" />
+            <Icon name="clock" className={`h-3.5 w-3.5 ${isAI ? "text-amber-500" : "text-sky-500"}`} />
             {course.duration}
           </span>
           {course.schedule && (
             <span className="flex items-center gap-1.5">
-              <Icon name="calendar" className="h-3.5 w-3.5 text-sky-500" />
+              <Icon name="calendar" className={`h-3.5 w-3.5 ${isAI ? "text-amber-500" : "text-sky-500"}`} />
               {course.schedule}
             </span>
           )}
           {course.level && (
             <span className="flex items-center gap-1.5">
-              <Icon name="graduation-cap" className="h-3.5 w-3.5 text-sky-500" />
+              <Icon name="graduation-cap" className={`h-3.5 w-3.5 ${isAI ? "text-amber-500" : "text-sky-500"}`} />
               {course.level}
             </span>
           )}
         </div>
 
         <h3 className="font-display text-lg font-bold text-navy-950">
-          <Link href={course.link} className="transition hover:text-sky-600">
+          <Link href={course.link} className={`transition ${isAI ? "hover:text-amber-600" : "hover:text-sky-600"}`}>
             {course.title}
           </Link>
         </h3>
@@ -75,7 +85,11 @@ export default function CourseCard({ course }) {
           <Link
             href={course.link}
             aria-label={`View ${course.title}`}
-            className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 text-navy-950 transition group-hover:bg-sky-500 group-hover:text-white"
+            className={`flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 text-navy-950 transition ${
+              isAI
+                ? "group-hover:bg-amber-500"
+                : "group-hover:bg-sky-500"
+            } group-hover:text-white`}
           >
             <Icon name="arrow-right" className="h-4 w-4" />
           </Link>

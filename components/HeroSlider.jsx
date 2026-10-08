@@ -15,6 +15,7 @@ const features = [
   { icon: "users", title: "Expert Instructors", text: "Industry practitioners" },
   { icon: "briefcase", title: "Career Placement", text: "For top performers" },
   { icon: "laptop", title: "Flexible Learning", text: "Campus & online" },
+  { icon: "cpu", title: "AI Coming Soon", text: "Future of technology", highlight: true },
 ];
 
 export default function HeroSlider() {
@@ -105,16 +106,22 @@ export default function HeroSlider() {
       </div>
 
       {/* Overlapping feature bar */}
-      <div className="relative z-10 mx-auto -mt-14 max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="grid overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-2xl shadow-navy-950/10 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="relative z-10 mx-auto -mt-14 max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-2xl shadow-navy-950/10 sm:grid-cols-2 lg:grid-cols-5">
           {features.map((f) => (
             <div
               key={f.title}
-              className="flex items-center gap-4 border-b border-slate-100 p-6 transition hover:bg-sky-50/60 last:border-b-0 sm:border-r sm:[&:nth-child(2n)]:border-r-0 lg:border-b-0 lg:[&:nth-child(2n)]:border-r lg:last:border-r-0"
+              className={`flex items-center gap-4 border-b border-slate-100 p-6 transition hover:bg-sky-50/60 last:border-b-0 sm:border-r sm:[&:nth-child(2n)]:border-r-0 lg:border-b-0 lg:[&:nth-child(5)]:border-r-0 ${f.highlight ? 'relative' : ''}`}
             >
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-sky-400 to-sky-600 text-white shadow-lg shadow-sky-500/30">
+              <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-white shadow-lg ${f.icon === 'cpu' ? 'bg-gradient-to-br from-amber-400 to-orange-500 shadow-amber-500/30 animate-pulse' : 'bg-gradient-to-br from-sky-400 to-sky-600 shadow-sky-500/30'}`}>
                 <Icon name={f.icon} className="h-5.5 w-5.5" />
               </span>
+              {f.highlight && (
+                <span className="absolute -top-1 -right-1 flex h-3 w-3">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-amber-500"></span>
+                </span>
+              )}
               <div>
                 <p className="text-sm font-bold text-navy-950">{f.title}</p>
                 <p className="text-xs text-slate-500">{f.text}</p>

@@ -12,6 +12,7 @@ const quickLinks = [
   { label: "News & Blog", href: "/news" },
   { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
+  { label: "AI Module", href: "/programmes/artificial-intelligence", badge: "Coming Soon" },
 ];
 
 const socials = [
@@ -87,10 +88,15 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="inline-flex items-center gap-2 transition hover:text-sky-300"
+                    className="inline-flex items-center gap-2 transition hover:text-sky-300 whitespace-nowrap"
                   >
                     <Icon name="chevron-right" className="h-3 w-3 text-sky-500" />
                     {link.label}
+                    {link.badge && (
+                      <span className="rounded-full bg-amber-400/20 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-amber-300">
+                        {link.badge}
+                      </span>
+                    )}
                   </Link>
                 </li>
               ))}
