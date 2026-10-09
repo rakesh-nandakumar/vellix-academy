@@ -14,8 +14,8 @@ const features = [
     description: "Our programs are designed around real-world business and technology environments, helping students gain practical knowledge that extends beyond traditional classroom learning.",
   },
   {
-    title: "Three Career Pathways",
-    description: "Students gain exposure to Business IT, Software Development, and Cybersecurity before selecting a specialization that aligns with their interests and career goals.",
+    title: "Four Career Pathways",
+    description: "Students gain exposure to Business IT, Software Development, Cybersecurity, and Artificial Intelligence before selecting a specialization that aligns with their interests and career goals.",
   },
   {
     title: "Hands-On Practical Experience",
@@ -28,6 +28,7 @@ const features = [
       "Business IT & Digital Transformation",
       "Full-Stack Development & Software Engineering",
       "Cybersecurity & Networking",
+      "Artificial Intelligence",
     ],
   },
   {

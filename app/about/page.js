@@ -227,7 +227,6 @@ export default function AboutPage() {
                 { step: "Professional Program", icon: "target" },
                 { step: "Industry Projects & Practical Experience", icon: "briefcase" },
                 { step: "Career Development", icon: "arrow-up" },
-                { step: "Artificial Intelligence Module", icon: "cpu", highlight: true },
                 { step: "Future Professional", icon: "award" },
               ].map((item, idx) => (
                 <div key={idx} className="relative flex items-center md:grid md:grid-cols-2 md:gap-12">

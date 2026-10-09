@@ -21,7 +21,7 @@ export const metadata = {
 };
 
 const aboutPoints = [
-  "3+ industry-expert instructors",
+  "4+ industry-expert instructors",
   "Real enterprise project deliverables",
   "Career placement for top performers",
   "Campus & online flexible options",
@@ -50,7 +50,7 @@ export default function HomePage() {
                 <Icon name="award" className="h-6 w-6" />
               </span>
               <div>
-                <p className="font-display text-2xl font-extrabold text-navy-950">200+</p>
+                <p className="font-display text-2xl font-extrabold text-navy-950">100+</p>
                 <p className="text-xs font-medium text-slate-500">Graduates Employed</p>
               </div>
             </div>
@@ -70,7 +70,7 @@ export default function HomePage() {
             <p className="-mt-6 leading-relaxed text-slate-500">
               Vellix Academy is Sri Lanka&apos;s premier enterprise IT education
               provider. Unlike traditional training centres, we teach software
-              development, data science, cloud computing and cybersecurity the
+              development, data science, cloud computing, cybersecurity and artificial intelligence the
               way it&apos;s actually practised at Fortune 500 companies —
               production-ready, end-to-end, and project-driven.
             </p>

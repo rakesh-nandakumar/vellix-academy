@@ -17,7 +17,6 @@ const futurePrograms = {
     "Data Analytics & Power BI",
     "Mobile App Development",
     "UI/UX Design",
-    "Artificial Intelligence & Automation",
   ],
   professionalSkills: [
     "Business English",

@@ -95,12 +95,12 @@ export default function Header() {
               </a>
             ))}
             <span className="mx-3 h-4 w-px bg-white/15" />
-            <Link
+            {/* <Link
               href="/register"
               className="rounded-full bg-sky-500 px-3.5 py-1 font-semibold text-white transition hover:bg-sky-400"
             >
               Register Now
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>
@@ -182,12 +182,6 @@ export default function Header() {
 
           {/* Actions */}
           <div className="flex items-center gap-3">
-            <Link
-              href="/login"
-              className="hidden text-sm font-semibold text-navy-950 transition hover:text-sky-600 sm:block"
-            >
-              Login
-            </Link>
             <Button href="/register" size="sm" className="hidden sm:inline-flex">
               Enroll Now
             </Button>
@@ -297,9 +291,9 @@ export default function Header() {
           <Button href="/register" onClick={() => setDrawerOpen(false)}>
             Enroll Now
           </Button>
-          <Button href="/login" variant="outline" onClick={() => setDrawerOpen(false)}>
+          {/* <Button href="/login" variant="outline" onClick={() => setDrawerOpen(false)}>
             Login
-          </Button>
+          </Button> */}
         </div>
       </div>
     </>
