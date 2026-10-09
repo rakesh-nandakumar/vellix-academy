@@ -24,13 +24,22 @@ export const metadata = {
   keywords:
     "IT courses Sri Lanka, software development, data science, cloud computing, full stack web development, enterprise programming",
   icons: {
-    icon: "/images/logos/favicon.png",
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
   },
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${jakarta.variable}`}>
+      <head>
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/manifest.json" />
+      </head>
       <body className="bg-white font-sans text-slate-600 antialiased">
         <AIBanner />
         <Header />

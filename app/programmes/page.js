@@ -3,6 +3,7 @@ import SectionHeading from "@/components/SectionHeading";
 import CourseExplorer from "@/components/CourseExplorer";
 import Icon from "@/components/Icon";
 import Button from "@/components/Button";
+import Image from "next/image";
 
 export const metadata = {
   title: "Programmes – Vellix Academy",
@@ -97,8 +98,13 @@ export default function ProgrammesPage() {
             <div className="relative">
               <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-amber-400 to-orange-500 opacity-20 blur-2xl" />
               <div className="relative overflow-hidden rounded-3xl border-2 border-amber-400 bg-white p-8 shadow-2xl shadow-amber-500/20">
-                <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-400 to-orange-500 text-white shadow-lg shadow-amber-500/30">
-                  <Icon name="cpu" className="h-10 w-10" />
+                <div className="relative h-20 w-20 shrink-0">
+                  <Image
+                    src="/images/logo.png"
+                    alt="Vellix Academy"
+                    fill
+                    className="object-contain"
+                  />
                 </div>
                 <h3 className="mt-6 font-display text-2xl font-bold text-navy-950">
                   Be the First

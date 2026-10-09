@@ -15,7 +15,7 @@ const features = [
   { icon: "users", title: "Expert Instructors", text: "Industry practitioners" },
   { icon: "briefcase", title: "Career Placement", text: "For top performers" },
   { icon: "laptop", title: "Flexible Learning", text: "Campus & online" },
-  { icon: "cpu", title: "AI Coming Soon", text: "Future of technology", highlight: true },
+  { icon: "brain", title: "AI Coming Soon", text: "Future of technology", highlight: true },
 ];
 
 export default function HeroSlider() {
@@ -107,14 +107,14 @@ export default function HeroSlider() {
 
       {/* Overlapping feature bar */}
       <div className="relative z-10 mx-auto -mt-14 max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-2xl shadow-navy-950/10 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="grid grid-cols-5 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-2xl shadow-navy-950/10">
           {features.map((f) => (
             <div
               key={f.title}
-              className={`flex items-center gap-4 border-b border-slate-100 p-6 transition hover:bg-sky-50/60 last:border-b-0 sm:border-r sm:[&:nth-child(2n)]:border-r-0 lg:border-b-0 lg:[&:nth-child(5)]:border-r-0 ${f.highlight ? 'relative' : ''}`}
+              className={`flex flex-col items-center gap-2 border-b border-slate-100 p-3 text-center transition hover:bg-sky-50/60 last:border-b-0 sm:flex-row sm:gap-4 sm:border-r sm:border-b-0 sm:p-6 sm:text-left lg:border-b-0 ${f.highlight ? 'relative' : ''}`}
             >
-              <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-white shadow-lg ${f.icon === 'cpu' ? 'bg-gradient-to-br from-amber-400 to-orange-500 shadow-amber-500/30 animate-pulse' : 'bg-gradient-to-br from-sky-400 to-sky-600 shadow-sky-500/30'}`}>
-                <Icon name={f.icon} className="h-5.5 w-5.5" />
+              <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-white shadow-lg sm:h-12 sm:w-12 ${f.icon === 'brain' ? 'bg-gradient-to-br from-amber-400 to-orange-500 shadow-amber-500/30 animate-pulse' : 'bg-gradient-to-br from-sky-400 to-sky-600 shadow-sky-500/30'}`}>
+                <Icon name={f.icon} className="h-5 w-5 sm:h-5.5 sm:w-5.5" />
               </span>
               {f.highlight && (
                 <span className="absolute -top-1 -right-1 flex h-3 w-3">
@@ -123,8 +123,8 @@ export default function HeroSlider() {
                 </span>
               )}
               <div>
-                <p className="text-sm font-bold text-navy-950">{f.title}</p>
-                <p className="text-xs text-slate-500">{f.text}</p>
+                <p className="text-xs font-bold text-navy-950 sm:text-sm">{f.title}</p>
+                <p className="text-[10px] text-slate-500 sm:text-xs">{f.text}</p>
               </div>
             </div>
           ))}

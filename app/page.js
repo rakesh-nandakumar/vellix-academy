@@ -128,7 +128,7 @@ export default function HomePage() {
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
             <div>
               <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-100 px-3 py-1 text-xs font-bold uppercase tracking-wider text-amber-700 ring-1 ring-amber-200 animate-pulse">
-                <Icon name="zap" className="h-3 w-3" />
+                <Icon name="brain" className="h-3 w-3" />
                 Coming 2027
               </span>
               <h2 className="mt-6 font-display text-3xl font-extrabold tracking-tight text-navy-950 sm:text-4xl lg:text-5xl">
@@ -168,8 +168,13 @@ export default function HomePage() {
             <div className="relative">
               <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-amber-400 to-orange-500 opacity-20 blur-2xl animate-pulse" />
               <div className="relative overflow-hidden rounded-3xl border-2 border-amber-400 bg-white p-8 shadow-2xl shadow-amber-500/20">
-                <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-400 to-orange-500 text-white shadow-lg shadow-amber-500/30">
-                  <Icon name="cpu" className="h-10 w-10" />
+                <div className="relative h-20 w-20 shrink-0">
+                  <Image
+                    src="/images/logo.png"
+                    alt="Vellix Academy"
+                    fill
+                    className="object-contain"
+                  />
                 </div>
                 <h3 className="mt-6 font-display text-2xl font-bold text-navy-950">
                   Be the First

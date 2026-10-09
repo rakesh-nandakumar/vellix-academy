@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Icon from "@/components/Icon";
 
 export default function AIBanner() {
@@ -12,9 +13,14 @@ export default function AIBanner() {
     <div className="relative bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500 text-white">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <div className="flex items-center gap-3">
-          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20 text-white">
-            <Icon name="zap" className="h-4 w-4" />
-          </span>
+          <div className="relative h-8 w-8 shrink-0">
+            <Image
+              src="/images/logo.png"
+              alt="Vellix Academy"
+              fill
+              className="object-contain brightness-0 invert"
+            />
+          </div>
           <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2">
             <span className="font-bold">Artificial Intelligence Module — Coming 2027</span>
             <span className="hidden sm:inline text-white/80">|</span>

@@ -29,7 +29,7 @@ export default function FloatingButtons() {
         aria-label="AI Module - Coming Soon"
         className="fixed bottom-6 left-24 z-40 flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-amber-400 to-orange-500 text-white shadow-lg shadow-amber-500/40 transition hover:-translate-y-1 hover:shadow-xl"
       >
-        <Icon name="cpu" className="h-5 w-5" />
+        <Icon name="brain" className="h-5 w-5" />
       </Link>
 
       <button
