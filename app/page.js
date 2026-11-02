@@ -47,11 +47,11 @@ export default function HomePage() {
             </div>
             <div className="absolute -bottom-6 -right-4 hidden items-center gap-4 rounded-2xl border border-slate-100 bg-white p-5 shadow-xl shadow-navy-950/10 sm:flex lg:-right-8">
               <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-sky-400 to-sky-600 text-white">
-                <Icon name="award" className="h-6 w-6" />
+                <Icon name="cpu" className="h-6 w-6" />
               </span>
               <div>
-                <p className="font-display text-2xl font-extrabold text-navy-950">100+</p>
-                <p className="text-xs font-medium text-slate-500">Graduates Employed</p>
+                <p className="font-display text-2xl font-extrabold text-navy-950">100%</p>
+                <p className="text-xs font-medium text-slate-500">Hands-On Learning</p>
               </div>
             </div>
           </div>
@@ -236,7 +236,7 @@ export default function HomePage() {
       </section> */}
 
       {/* Testimonials */}
-      <section className="py-20 sm:py-24">
+      {/* <section className="py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Student Stories"
@@ -245,7 +245,7 @@ export default function HomePage() {
           />
           <TestimonialSlider />
         </div>
-      </section>
+      </section> */}
 
       {/* CTA */}
       <CtaBanner
@@ -287,6 +287,7 @@ export default function HomePage() {
               { src: "/images/logos/vellix.png", alt: "Vellix" },
               { src: "/images/logos/vellix-point.png", alt: "Vellix Point" },
               { src: "/images/logos/pos.png", alt: "POS" },
+              { src: "/images/logos/smslogo.png", alt: "SMS" },
             ].map((logo) => (
               <Image
                 key={logo.alt}
