@@ -76,9 +76,9 @@ export default function Header() {
               <Icon name="phone" className="h-4 w-4 text-sky-400" />
               +94 77 320 8478
             </a>
-            <a href="mailto:info@vellixacademy@gmail.com" className="flex items-center gap-2 transition hover:text-white">
+            <a href="mailto:vellixacademy@gmail.com" className="flex items-center gap-2 transition hover:text-white">
               <Icon name="mail" className="h-4 w-4 text-sky-400" />
-              info@vellixacademy@gmail.com
+              vellixacademy@gmail.com
             </a>
           </div>
           <div className="flex items-center gap-1">

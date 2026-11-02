@@ -31,8 +31,8 @@ const contactDetails = [
   {
     icon: "mail",
     title: "Email Us",
-    content: "info@vellixacademy@gmail.com",
-    href: "mailto:info@vellixacademy@gmail.com",
+    content: "vellixacademy@gmail.com",
+    href: "mailto:vellixacademy@gmail.com",
   },
 ];
 
