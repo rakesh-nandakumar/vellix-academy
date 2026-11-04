@@ -11,11 +11,11 @@ import Button from "@/components/Button";
 import { heroSlides } from "@/lib/data";
 
 const features = [
-  { icon: "code", title: "Build Real Systems", text: "Not just tutorials" },
-  { icon: "users", title: "Learn from Experts", text: "Industry veterans" },
-  { icon: "briefcase", title: "Career Ready", text: "Job-focused skills" },
-  { icon: "laptop", title: "Learn Your Way", text: "Campus or online" },
-  { icon: "brain", title: "AI & Automation", text: "Future skills now", highlight: true },
+  { icon: "code", title: "Enterprise Projects", text: "Real-world deliverables" },
+  { icon: "users", title: "Expert Instructors", text: "Industry practitioners" },
+  { icon: "briefcase", title: "Career Placement", text: "For top performers" },
+  { icon: "laptop", title: "Flexible Learning", text: "Campus & online" },
+  { icon: "brain", title: "AI Coming Soon", text: "Future of technology", highlight: true },
 ];
 
 export default function HeroSlider() {
@@ -50,56 +50,33 @@ export default function HeroSlider() {
                   <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-navy-950/60 to-transparent" />
 
                   <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-28 pt-16 sm:px-6 lg:px-8">
-                    <div className="max-w-full relative">
-                      {/* Glass card effect */}
-                      <div className="absolute -inset-4 bg-gradient-to-r from-amber-500/10 to-orange-500/10 rounded-3xl blur-2xl"></div>
-                      <div className="relative rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 p-8 sm:p-10">
-                        {/* Decorative corner accent */}
-                        <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-amber-400/30 rounded-tl-2xl"></div>
-                        <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-amber-400/30 rounded-br-2xl"></div>
-
-                        {/* Unique stylized badge */}
-                        <div className="mb-6 inline-flex items-center gap-2">
-                          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-amber-400 to-orange-500 text-white text-xs font-black">
-                            V
-                          </span>
-                          <span className="text-xs font-bold uppercase tracking-[0.2em] text-amber-300">
-                            Career Launchpad
-                          </span>
-                        </div>
-
-                        <h1 className="font-display text-4xl font-black leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl">
-                          {line1}
-                          {line2 && (
-                            <>
-                              <br />
-                              <span className="bg-gradient-to-r from-amber-400 via-orange-400 to-amber-400 bg-clip-text text-transparent">
-                                {line2}
-                              </span>
-                            </>
-                          )}
-                        </h1>
-
-                        {/* Decorative divider */}
-                        <div className="my-6 flex items-center gap-4">
-                          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-amber-400/50 to-transparent"></div>
-                          <span className="text-amber-400/50 text-xs">✦</span>
-                          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-amber-400/50 to-transparent"></div>
-                        </div>
-
-                        <p className="text-base leading-relaxed text-slate-300 sm:text-lg">
-                          {slide.subtitle}
-                        </p>
-
-                        <div className="mt-8 flex flex-wrap gap-3">
-                          <Button href={slide.btnLink} size="lg" className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 border-0 shadow-lg shadow-amber-500/25">
-                            {slide.btnText}
-                            <Icon name="arrow-right" className="h-4 w-4" />
-                          </Button>
-                          <Button href="/contact" variant="outline-light" size="lg">
-                            Talk to Us
-                          </Button>
-                        </div>
+                    <div className="max-w-2xl">
+                      <span className="mb-5 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-sky-300 ring-1 ring-white/20 backdrop-blur-sm">
+                        <Icon name="zap" className="h-3.5 w-3.5" />
+                        Enterprise IT Education
+                      </span>
+                      <h1 className="font-display text-4xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
+                        {line1}
+                        {line2 && (
+                          <>
+                            <br />
+                            <span className="bg-gradient-to-r from-sky-300 to-sky-500 bg-clip-text text-transparent">
+                              {line2}
+                            </span>
+                          </>
+                        )}
+                      </h1>
+                      <p className="mt-6 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg">
+                        {slide.subtitle}
+                      </p>
+                      <div className="mt-8 flex flex-wrap gap-4">
+                        <Button href={slide.btnLink} size="lg">
+                          {slide.btnText}
+                          <Icon name="arrow-right" className="h-4 w-4" />
+                        </Button>
+                        <Button href="/contact" variant="outline-light" size="lg">
+                          Get in Touch
+                        </Button>
                       </div>
                     </div>
                   </div>
