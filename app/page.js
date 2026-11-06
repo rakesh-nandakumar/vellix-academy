@@ -12,6 +12,7 @@ import CtaBanner from "@/components/CtaBanner";
 import Button from "@/components/Button";
 import Icon from "@/components/Icon";
 import InstructorCard from "@/components/InstructorCard";
+import AIOrb from "@/components/AIRobotRun";
 import { newsArticles, programmes, galleryImages, instructors, courses } from "@/lib/data";
 
 export const metadata = {
@@ -165,27 +166,40 @@ export default function HomePage() {
                 </Button>
               </div>
             </div>
+
+            {/* Right card */}
             <div className="relative">
               <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-amber-400 to-orange-500 opacity-20 blur-2xl animate-pulse" />
-              <div className="relative overflow-hidden rounded-3xl border-2 border-amber-400 bg-white p-8 shadow-2xl shadow-amber-500/20">
-                <div className="relative h-20 w-20 shrink-0">
-                  <Image
-                    src="/images/logo.png"
-                    alt="Vellix Academy"
-                    fill
-                    className="object-contain"
-                  />
+
+              {/* No padding on the card, so the robot track fills it edge to edge */}
+              <div className="relative overflow-hidden rounded-3xl border-2 border-amber-400 bg-white shadow-2xl shadow-amber-500/20">
+                {/* Robot runs edge to edge across the top of the card */}
+                <AIOrb className="w-full border-b border-orange-100" />
+
+                {/* Padding lives here instead of on the card */}
+                <div className="p-8">
+                  <span className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-orange-600">
+                    <span className="relative flex h-2 w-2">
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange-400 opacity-75" />
+                      <span className="relative inline-flex h-2 w-2 rounded-full bg-orange-500" />
+                    </span>
+                    AI · Initializing
+                  </span>
+
+                  <h3 className="mt-4 font-display text-2xl font-bold text-navy-950">
+                    Be the First
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                    Join our AI waitlist and be among the first to know when enrollment opens. Limited spots available for the inaugural batch.
+                  </p>
+                  <Button
+                    href="/contact"
+                    className="mt-6 w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600"
+                  >
+                    Join Waitlist
+                    <Icon name="arrow-right" className="h-4 w-4" />
+                  </Button>
                 </div>
-                <h3 className="mt-6 font-display text-2xl font-bold text-navy-950">
-                  Be the First
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                  Join our AI waitlist and be among the first to know when enrollment opens. Limited spots available for the inaugural batch.
-                </p>
-                <Button href="/contact" className="mt-6 w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600">
-                  Join Waitlist
-                  <Icon name="arrow-right" className="h-4 w-4" />
-                </Button>
               </div>
             </div>
           </div>
@@ -288,6 +302,7 @@ export default function HomePage() {
               { src: "/images/logos/vellix-point.png", alt: "Vellix Point" },
               { src: "/images/logos/pos.png", alt: "POS" },
               { src: "/images/logos/smslogo.png", alt: "SMS" },
+              { src: "/images/logos/bpologo.png", alt: "BPO" },
             ].map((logo) => (
               <Image
                 key={logo.alt}

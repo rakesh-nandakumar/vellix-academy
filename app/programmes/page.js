@@ -4,6 +4,7 @@ import CourseExplorer from "@/components/CourseExplorer";
 import Icon from "@/components/Icon";
 import Button from "@/components/Button";
 import Image from "next/image";
+import AIRobotRun from "@/components/AIRobotRun";
 
 export const metadata = {
   title: "Programmes – Vellix Academy",
@@ -97,17 +98,21 @@ export default function ProgrammesPage() {
             <div className="relative">
               <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-amber-400 to-orange-500 opacity-20 blur-2xl" />
               <div className="relative overflow-hidden rounded-3xl border-2 border-amber-400 bg-white p-8 shadow-2xl shadow-amber-500/20">
-                <div className="relative h-20 w-20 shrink-0">
-                  <Image
-                    src="/images/logo.png"
-                    alt="Vellix Academy"
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-                <h3 className="mt-6 font-display text-2xl font-bold text-navy-950">
-                  Be the First
-                </h3>
+                <div className="relative overflow-hidden rounded-3xl border-2 border-amber-400 bg-white p-8 shadow-2xl shadow-amber-500/20">
+                  {/* Robot runs edge to edge across the top of the card */}
+                  <AIRobotRun className="-mx-8 -mt-8 border-b border-orange-100 w-full" />
+
+                  <span className="mt-6 inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-orange-600">
+                    <span className="relative flex h-2 w-2">
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange-400 opacity-75" />
+                      <span className="relative inline-flex h-2 w-2 rounded-full bg-orange-500" />
+                    </span>
+                    AI · Initializing
+                  </span>
+
+                  <h3 className="mt-4 font-display text-2xl font-bold text-navy-950">
+                    Be the First
+                  </h3>
                 <p className="mt-3 text-sm leading-relaxed text-slate-600">
                   Join our AI waitlist and be among the first to know when enrollment opens. Limited spots available for the inaugural batch.
                 </p>
