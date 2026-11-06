@@ -98,9 +98,8 @@ export default function ProgrammesPage() {
             <div className="relative">
               <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-amber-400 to-orange-500 opacity-20 blur-2xl" />
               <div className="relative overflow-hidden rounded-3xl border-2 border-amber-400 bg-white p-8 shadow-2xl shadow-amber-500/20">
-                <div className="relative overflow-hidden rounded-3xl border-2 border-amber-400 bg-white p-8 shadow-2xl shadow-amber-500/20">
-                  {/* Robot runs edge to edge across the top of the card */}
-                  <AIRobotRun className="-mx-8 -mt-8 border-b border-orange-100 w-full" />
+                {/* Robot runs edge to edge across the top of the card */}
+                <AIRobotRun className="-mx-8 -mt-8 border-b border-orange-100 w-full" />
 
                   <span className="mt-6 inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-orange-600">
                     <span className="relative flex h-2 w-2">
